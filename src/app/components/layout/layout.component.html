@@ -1,0 +1,18 @@
+<mat-drawer-container class="example-container w-full h-full">
+  <mat-toolbar color="primary">
+    <button
+      type="button" (click)="drawer.toggle()"
+      mat-icon-button aria-label="icon button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>PsychoHelp</span>
+  </mat-toolbar>
+  <mat-drawer #drawer class="example-sidenav" mode="over">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller; drawer.toggle()" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+  <h1 class="">ASDFAFA</h1>
+</mat-drawer-container>
