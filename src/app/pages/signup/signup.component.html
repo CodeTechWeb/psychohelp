@@ -1,0 +1,44 @@
+<section class="w-full h-full flex justify-center items-center">
+  <div class="w-3/4 md:w-1/2 lg:w-1/4">
+    <form class="flex flex-col justify-between">
+      <div class="flex flex-col md:flex-row">
+        <mat-form-field appearance="fill" class="w-full sm:w-1/2">
+          <mat-label>First Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="w-full sm:w-1/2">
+          <mat-label>Last Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="email">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="flex justify-center">
+        <button type ="submit" mat-raised-button color="primary">Sign Up</button></div>
+    </form>
+  </div>
+</section>

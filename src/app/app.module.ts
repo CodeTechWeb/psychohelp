@@ -7,11 +7,20 @@ import { PsychologistsComponent } from './components/psychologists/psychologists
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from "./components/layout/layout.module";
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import {PagesModule} from "./pages/pages.module";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PsychologistsComponent
+    PsychologistsComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +28,11 @@ import { LayoutModule } from "./components/layout/layout.module";
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
-
+    PagesModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
