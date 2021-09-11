@@ -5,6 +5,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -21,6 +22,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
+    RouterModule,
   ]
 })
 export class LayoutModule { }

@@ -18,7 +18,8 @@ import { LayoutModule } from "./components/layout/layout.module";
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    LayoutModule
+    LayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
