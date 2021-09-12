@@ -21,20 +21,20 @@
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
-        <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <input matInput [type]="passwordHide ? 'password' : 'text'">
+        <button type="button" mat-icon-button matSuffix (click)="passwordHide = !passwordHide"
+                [attr.aria-label]="'passwordHide password'"
+                [attr.aria-pressed]="passwordHide">
+          <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Confirm Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
-        <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <input matInput [type]="passwordConfirmationHide ? 'password' : 'text'">
+        <button type="button" mat-icon-button matSuffix (click)="passwordConfirmationHide = !passwordConfirmationHide"
+                [attr.aria-label]="'passwordHide password'"
+                [attr.aria-pressed]="passwordConfirmationHide">
+          <mat-icon>{{passwordConfirmationHide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
       <div class="flex justify-center">

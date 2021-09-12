@@ -6,12 +6,15 @@ import { PageNotFoundComponent} from "./page-not-found/page-not-found.component"
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
+import { PsychologistsComponent } from "./psychologists/psychologists.component";
+import {LayoutModule} from "../components/layout/layout.module";
 
 @NgModule({
   declarations: [
     SignInComponent,
     SignUpComponent,
     PageNotFoundComponent,
+    PsychologistsComponent
   ],
   exports: [],
   imports: [
@@ -19,6 +22,7 @@ import { MatIconModule } from "@angular/material/icon";
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    LayoutModule,
   ]
 })
 export class PagesModule { }
