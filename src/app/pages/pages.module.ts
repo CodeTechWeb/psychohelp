@@ -8,6 +8,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { PsychologistsComponent } from "./psychologists/psychologists.component";
 import {LayoutModule} from "../components/layout/layout.module";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {LayoutModule} from "../components/layout/layout.module";
     MatButtonModule,
     MatIconModule,
     LayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
   ]
 })
 export class PagesModule { }

@@ -1,4 +1,6 @@
 export interface Psychologist {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
+  photo: string;
 }
