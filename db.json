@@ -1,9 +1,10 @@
 {
   "users": [
-    {"id": 1, "firstName": "Alessandro", "lastName":  "Chumpitaz"},
-    {"id": 2, "firstName": "Favio", "lastName":  "Viera"},
-    {"id": 3, "firstName": "Jose", "lastName": "Pain"},
-    {"id": 4, "firstName": "Sebastian", "lastName": "Alfaro"}
+    {"id": 1, "firstName": "Alessandro", "lastName":  "Chumpitaz", "photo": "http://placeimg.com/640/480/nature"},
+    {"id": 2, "firstName": "Favio", "lastName":  "Viera", "photo": "http://placeimg.com/640/480/nature"},
+    {"id": 3, "firstName": "Jose", "lastName": "Pain",  "photo": "http://placeimg.com/640/480/nature"},
+    {"id": 4, "firstName": "Sebastian", "lastName": "Alfaro",  "photo": "http://placeimg.com/640/480/nature"},
+    {"id": 5, "firstName": "Fabricio", "lastName": "Rosas",  "photo": "http://placeimg.com/640/480/nature"}
   ],
   "patients": [
     {"id": 1, "userId": 2},
@@ -11,7 +12,8 @@
     {"id": 3, "userId": 4}
   ],
   "psychologists": [
-    {"id":1, "userId": 1, "license": "ARG58ED", "active": true}
+    {"id":1, "userId": 1, "license": "ARG58ED", "active": true},
+    {"id": 2, "userId": 5, "license": "214124", "active": true}
   ],
   "meetings": [
     {"id": 1, "psychologistId": 1, "patientId": 1, "startTime": "2021-08-23T18:15:43.511Z", "duration": 2 }
