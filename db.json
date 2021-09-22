@@ -1,0 +1,15 @@
+{
+  "users": [
+    {"id": 1, "firstName": "Alessandro", "lastName":  "Chumpitaz"},
+    {"id": 2, "firstName": "Favio", "lastName":  "Viera"}
+  ],
+  "patients": [
+    {"id": 1, "userId": 2}
+  ],
+  "psychologists": [
+    {"id":1, "userId": 1, "license": "ARG58ED", "active": true}
+  ],
+  "meetings": [
+    {"id": 1, "psychologistId": 1, "patientId": 1, "startTime": "2021-08-23T18:15:43.511Z", "duration": 2 }
+  ]
+}
