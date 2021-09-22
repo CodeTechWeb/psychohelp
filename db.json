@@ -1,10 +1,14 @@
 {
   "users": [
     {"id": 1, "firstName": "Alessandro", "lastName":  "Chumpitaz"},
-    {"id": 2, "firstName": "Favio", "lastName":  "Viera"}
+    {"id": 2, "firstName": "Favio", "lastName":  "Viera"},
+    {"id": 3, "firstName": "Jose", "lastName": "Pain"},
+    {"id": 4, "firstName": "Sebastian", "lastName": "Alfaro"}
   ],
   "patients": [
-    {"id": 1, "userId": 2}
+    {"id": 1, "userId": 2},
+    {"id": 2, "userId": 3},
+    {"id": 3, "userId": 4}
   ],
   "psychologists": [
     {"id":1, "userId": 1, "license": "ARG58ED", "active": true}
