@@ -2,23 +2,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PsychologistsComponent } from './pages/psychologists/psychologists.component';
 import { HttpClientModule } from "@angular/common/http";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LayoutModule } from "./components/layout/layout.module";
-import { PagesModule } from "./pages/pages.module";
+import { LayoutModule } from "./components/common/layout/layout.module";
+import { ComponentsModule } from "./components/components.module";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     LayoutModule,
-    PagesModule,
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
