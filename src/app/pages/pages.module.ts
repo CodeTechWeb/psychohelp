@@ -13,6 +13,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { HomeComponent } from './home/home.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     SignUpComponent,
     PsychologistsComponent,
     PageNotFoundComponent,
-    RoomComponent
+    RoomComponent,
+    HomeComponent
   ],
   exports: [],
   imports: [
@@ -31,7 +34,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    CommonModule
   ]
 })
 export class PagesModule { }
