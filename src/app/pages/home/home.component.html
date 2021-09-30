@@ -1,1 +1,16 @@
-<p>home works!</p>
+<app-layout>
+  <div class="w-full h-full">
+    <mat-grid-list cols="4" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightgreeb'">
+        Image
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'blue'">
+        center
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'green'">
+        Image right
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</app-layout>
+
