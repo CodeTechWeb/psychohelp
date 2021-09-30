@@ -60,7 +60,7 @@ export class RoomComponent implements OnInit {
   checkMediaDevices = () => {
     if(navigator && navigator.mediaDevices) {
       navigator.mediaDevices.getUserMedia({
-        audio: false,
+        audio: true,
         video: true
       })
         .then((stream: any) => {

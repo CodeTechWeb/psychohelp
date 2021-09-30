@@ -8,9 +8,6 @@ export class PeerService {
   peer: any;
 
   constructor() {
-    this.peer = new Peer(undefined, {
-      host: 'localhost',
-      port: 3001
-    })
+    this.peer = new Peer()
   }
 }
