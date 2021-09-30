@@ -20,7 +20,7 @@ import { PagesModule } from "./pages/pages.module";
     AppRoutingModule,
     LayoutModule,
     ComponentsModule,
-    PagesModule
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

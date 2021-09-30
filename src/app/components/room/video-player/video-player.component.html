@@ -1,3 +1,6 @@
-<div *ngIf="stream">
-  <video [srcObject]="stream" autoplay> </video>
+<div class="w-96" *ngIf="stream">
+  <video [srcObject]="stream" autoplay></video>
+  <div class="label-name">
+    <span>Name</span>
+  </div>
 </div>

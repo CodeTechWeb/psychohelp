@@ -15,7 +15,9 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { HomeComponent } from './home/home.component';
 import {CommonModule} from "@angular/common";
-
+import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
+//@ts-ignore
+const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {withCredentials: '*'}};
 @NgModule({
   declarations: [
     SignInComponent,
@@ -23,7 +25,7 @@ import {CommonModule} from "@angular/common";
     PsychologistsComponent,
     PageNotFoundComponent,
     RoomComponent,
-    HomeComponent
+    HomeComponent,
   ],
   exports: [],
   imports: [
@@ -35,7 +37,8 @@ import {CommonModule} from "@angular/common";
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
-    CommonModule
+    CommonModule,
+    SocketIoModule.forRoot(config)
   ]
 })
 export class PagesModule { }
