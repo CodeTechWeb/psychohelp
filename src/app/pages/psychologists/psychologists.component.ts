@@ -1,7 +1,5 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import { PsychologistService } from "../../services/psychologist.service";
-import { Psychologist } from "../../types/psychologist";
-import { NgForm } from "@angular/forms";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 

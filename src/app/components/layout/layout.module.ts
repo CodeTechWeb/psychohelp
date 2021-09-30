@@ -7,8 +7,6 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import {RouterModule} from "@angular/router";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
-
-
 @NgModule({
   declarations: [
     LayoutComponent
