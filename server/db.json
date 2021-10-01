@@ -20,6 +20,40 @@
   ],
 
   "publications": [
-    {"id": 1, "title": "Titulo de Prueba", "content": "Texto de Prueba", "tags": ["tag1","tag2"], "psychologistID": 1 }
+    {
+      "id": 1,
+      "title": "¿Cómo vencer a la ansiedad?",
+      "description": "La ansiedad es un problema mental que afecta la salud de muchas personas.",
+      "tags": [
+        "#ansiedad",
+        "#panico",
+        "#miedo"
+      ],
+      "img": "https://cdn.pixabay.com/photo/2021/01/27/06/54/nova-scotia-duck-tolling-retriever-5953883_1280.jpg"
+    },
+    {
+      "id": 2,
+      "title": "¿Cómo ayudar a una persona con depresión?",
+      "description": "La depresión es uno de los problemas mentales mas difíciles de tratar. Es por ello que en este capítulo te enseñaremos como apoyar a una persona que tiene sintomas de depresión.",
+      "tags": [
+        "#depresion",
+        "#tristeza",
+        "#apoyoemocional"
+      ],
+      "img": "https://assets.weforum.org/article/image/responsive_large_E79PmG1Oop_9P7-edBkH9JddpXUpnaVEz2cvg8KkYOE.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Aprendiendo sobre emociones negativas",
+      "description": "Todos podemos reconocer aquellas emociones que nos gustan, las emociones agradables. A quién no le gusta sentirse alegre, emocionado, enamorado, etc. Pero por otro lado, también reconocemos emociones que pueden ser más incómodas, por ejemplo, la tristeza, vergüenza, culpa y enojo.",
+      "tags": [
+        "#emociones",
+        "#alegria",
+        "#enojo",
+        "#tristeza"
+      ],
+      "img": "https://gentequebrilla.azurewebsites.net/wp-content/uploads/2019/04/12014-1024x604.jpg"
+    }
+
   ]
 }

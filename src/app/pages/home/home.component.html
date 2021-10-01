@@ -1,17 +1,84 @@
 <app-layout>
   <div class="w-full h-full">
-    <mat-grid-list cols="4" rowHeight="100px">
-      <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightgreeb'">
-        Image
+    <mat-grid-list [hidden]="" cols="8" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="3" [style.background]="'pink'">
+        <div align="center">
+          <img width="250" height="250" src="https://medii.care/wp-content/uploads/sites/41/2020/08/dra-lytza-alvarez-perfil-01.png">
+        </div>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'blue'">
-        center
+      <mat-grid-tile [colspan]="5" [rowspan]="14" [style.background]="'blue'">
+        <div class="w-full h-full">
+          <mat-card class="mb-4 ml-5 mr-5 m-5" *ngFor="let publication of publications">
+            <mat-card-title-group>
+              <mat-card-title>{{publication.title}}</mat-card-title>
+              <mat-card-subtitle>Small</mat-card-subtitle>
+            </mat-card-title-group>
+            <div class="flex items-stretch self-center grid justify-items-stretch">
+              <mat-card-content>
+                {{publication.description}}
+              </mat-card-content>
+              <div class="self-center justify-self-end"><img width="250" height="250" [src]="publication.img" ></div>
+            </div>
+          </mat-card>
+        </div>
+
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'green'">
-        Image right
+
+      <mat-grid-tile [colspan]="2" [rowspan]="10" [style.background]="'green'">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header>
+          <img align="center" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
       </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'grey'">
+        <div class="btn1">
+          <button mat-raised-button color="sky">Primary</button>
+        </div>
+
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="3" [style.background]="'green'">
+        <div>
+          <mat-nav-list>
+            <a mat-list-item href="#">Calendar</a>
+            <a mat-list-item href="#">Guia</a>
+            <a mat-list-item href="#">Soporte</a>
+          </mat-nav-list>
+        </div>
+      </mat-grid-tile>
+
     </mat-grid-list>
   </div>
 </app-layout>
 
+<style>
+  .go{
+    color: aqua;
+  }
+  .btn1 {
+    justify-content: flex-start;
+  }
+  .example-card {
+    max-width: 300px;
+  }
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size:auto;
+  }
+</style>
 

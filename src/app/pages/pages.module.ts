@@ -18,6 +18,9 @@ import {CommonModule} from "@angular/common";
 import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatListModule} from "@angular/material/list";
+import {MatCardModule} from "@angular/material/card";
+
 //@ts-ignore
 const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {withCredentials: '*'}};
 @NgModule({
@@ -30,6 +33,7 @@ const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {withCre
     HomeComponent,
   ],
   exports: [],
+
   imports: [
     ComponentsModule,
     LayoutModule,
@@ -42,7 +46,10 @@ const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {withCre
     CommonModule,
     SocketIoModule.forRoot(config),
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
+    MatCardModule
   ]
+
 })
 export class PagesModule { }
