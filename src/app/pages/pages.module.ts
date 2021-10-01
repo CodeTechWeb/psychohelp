@@ -16,11 +16,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import { HomeComponent } from './home/home.component';
 import {CommonModule} from "@angular/common";
 import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
-import {environment} from "../../environments/environment";
-
 //@ts-ignore
-const config: SocketIoConfig = {url: environment.socketUrl, options: {withCredentials: '*'}};
-
+const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {withCredentials: '*'}};
 @NgModule({
   declarations: [
     SignInComponent,

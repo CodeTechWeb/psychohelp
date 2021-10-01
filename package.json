@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"ng serve\" \"json-server --watch server/db.json --port 8080\"",
+    "start": "concurrently \"ng serve\" \"json-server --watch server/db.json --port 8080\" \"node server/socket.js\"",
     "build": "ng build",
-    "deploy": "ng build && firebase deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
