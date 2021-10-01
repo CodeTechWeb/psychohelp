@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from "./common/page-not-found/page-not-found.co
 
 import { ComponentsModule } from "../components/components.module";
 import { LayoutModule } from "../components/layout/layout.module";
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
 import {CommonModule} from "@angular/common";
 import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
 import {environment} from "../../environments/environment";
-
+import { PsychologistProfileComponent } from './psychologist-profile/psychologist-profile.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 //@ts-ignore
 const config: SocketIoConfig = {url: environment.socketUrl, options: {withCredentials: '*'}};
 
@@ -29,6 +31,8 @@ const config: SocketIoConfig = {url: environment.socketUrl, options: {withCreden
     PageNotFoundComponent,
     RoomComponent,
     HomeComponent,
+    PsychologistProfileComponent,
+    PatientProfileComponent,
   ],
   exports: [],
   imports: [
@@ -40,6 +44,7 @@ const config: SocketIoConfig = {url: environment.socketUrl, options: {withCreden
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
+    MatGridListModule,
     CommonModule,
     SocketIoModule.forRoot(config)
   ]
