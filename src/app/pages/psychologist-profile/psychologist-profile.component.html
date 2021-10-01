@@ -1,0 +1,12 @@
+<div>
+  <mat-grid-list cols="3" rowHeight="200px" align="center">
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+      {{tile.text}}
+    </mat-grid-tile>
+    <p>Muestrate por favor uu</p>
+  </mat-grid-list>
+</div>
+
+
