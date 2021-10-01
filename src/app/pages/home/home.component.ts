@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   publications!: Publications[];
   constructor(private publicationsSvc: PublicationsService) { }
 
-
   ngOnInit(): void {
     this.publicationsSvc.getPublications()
       .pipe(
