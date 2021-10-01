@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from "./components/layout/layout.module";
 import { ComponentsModule } from "./components/components.module";
 import { PagesModule } from "./pages/pages.module";
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,

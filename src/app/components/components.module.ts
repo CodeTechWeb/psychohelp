@@ -4,6 +4,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { LayoutModule } from "./layout/layout.module";
 import { BottomMenuComponent } from './room/bottom-menu/bottom-menu.component';
 import { VideoPlayerComponent } from './room/video-player/video-player.component';
+
 import { CommonModule } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
@@ -12,6 +13,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+
 
 @NgModule({
   declarations: [
