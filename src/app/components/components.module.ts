@@ -5,11 +5,19 @@ import { LayoutModule } from "./layout/layout.module";
 import { BottomMenuComponent } from './room/bottom-menu/bottom-menu.component';
 import { VideoPlayerComponent } from './room/video-player/video-player.component';
 import { CommonModule } from "@angular/common";
+import { DialogComponent } from './dialog/dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatCardModule} from "@angular/material/card";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
     BottomMenuComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    DialogComponent
   ],
   exports: [
     VideoPlayerComponent
@@ -18,7 +26,13 @@ import { CommonModule } from "@angular/common";
     MatButtonModule,
     MatIconModule,
     LayoutModule,
-    CommonModule
+    CommonModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class ComponentsModule { }
