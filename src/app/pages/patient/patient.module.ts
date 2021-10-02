@@ -15,6 +15,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
+import {PatientProfileComponent} from "./profile/patient-profile.component";
 
 
 
@@ -23,6 +24,7 @@ import {MatIconModule} from "@angular/material/icon";
     SignInComponent,
     SignUpComponent,
     PsychologistsComponent,
+    PatientProfileComponent,
     HomePatientComponent
   ],
   imports: [

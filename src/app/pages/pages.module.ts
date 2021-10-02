@@ -5,12 +5,14 @@ import { PageNotFoundComponent } from "./common/page-not-found/page-not-found.co
 import { ComponentsModule } from "../components/components.module";
 import { LayoutModule } from "../components/layout/layout.module";
 import { CommonModule} from "@angular/common";
+import { PatientModule } from "./patient/patient.module";
+import { PsychologistModule } from "./psychologist/psychologist.module";
 import { SocketIoConfig, SocketIoModule } from "ngx-socket-io";
-import {PatientModule} from "./patient/patient.module";
-import {PsychologistModule} from "./psychologist/psychologist.module";
 
+import { environment} from "../../environments/environment";
 //@ts-ignore
-const config: SocketIoConfig = {url: 'http://localhost:3000/', options: { withCredentials: '*' }};
+const config: SocketIoConfig = {url: environment.socketUrl, options: {withCredentials: '*'}};
+
 @NgModule({
   declarations: [
     PageNotFoundComponent,
@@ -25,6 +27,5 @@ const config: SocketIoConfig = {url: 'http://localhost:3000/', options: { withCr
     PsychologistModule,
     SocketIoModule.forRoot(config)
   ]
-
 })
 export class PagesModule { }

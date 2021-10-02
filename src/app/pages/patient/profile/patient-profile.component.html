@@ -1,0 +1,77 @@
+<app-layout>
+  <div class="w-full h-full">
+    <mat-grid-list cols="1" rowHeight="700px">
+      <mat-grid-tile>
+        <div>
+          <mat-card class="imagesize">
+            <img mat-card-image src="../assets/patient1.jpg" class="imagesize">
+          </mat-card>
+          <div class="mt-3">
+            <mat-card style="text-align: center;">
+              <mat-card-title>Patient's name</mat-card-title>
+            </mat-card>
+          </div>
+        </div>
+        <div class="ml-10">
+          <mat-card class="example-card">
+            <mat-card-title style="font-size:2em">Patient's Profile</mat-card-title>
+            <mat-card-content>
+              <form class="example-form">
+
+                <mat-form-field class="text-full-width" appearance="fill">
+                  <mat-label>Full Name</mat-label>
+                  <input matInput>
+                </mat-form-field>
+
+                <mat-form-field class="text-full-width" appearance="fill">
+                  <mat-label>E-mail</mat-label>
+                  <input matInput>
+                </mat-form-field>
+
+                <mat-form-field class="text-full-width" appearance="fill">
+                  <mat-label>Birthdate</mat-label>
+                  <input matInput>
+                </mat-form-field>
+
+                <mat-form-field class="text-full-width" appearance="fill">
+                  <mat-label>Phone number</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </form>
+            </mat-card-content>
+            <mat-card-actions style="text-align: center;">
+              <button mat-button color="primary">Save Changes</button>
+              <button mat-raised-button color="primary">Edit Profile</button>
+              <button mat-button color="warn">Cancel</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</app-layout>
+
+<style>
+  .example-card {
+    max-width: 100%;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .tilecolor {
+    background-color: lightblue;
+  }
+
+  .imagesize {
+    max-height: 370px;
+    max-width: 370px;
+  }
+
+  .text-full-width {
+    width: 100%;
+  }
+</style>
