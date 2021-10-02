@@ -13,16 +13,19 @@ import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {CarouselComponent} from "./carousel/carousel.component";
 
 
 @NgModule({
   declarations: [
     BottomMenuComponent,
     VideoPlayerComponent,
-    DialogComponent
+    DialogComponent,
+    CarouselComponent
   ],
   exports: [
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    CarouselComponent
   ],
   imports: [
     MatButtonModule,
