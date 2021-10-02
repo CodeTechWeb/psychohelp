@@ -14,6 +14,9 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {CarouselComponent} from "./carousel/carousel.component";
+import {ReactiveFormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
+
 
 
 @NgModule({
@@ -27,17 +30,19 @@ import {CarouselComponent} from "./carousel/carousel.component";
     VideoPlayerComponent,
     CarouselComponent
   ],
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-    LayoutModule,
-    CommonModule,
-    MatDialogModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatInputModule
-  ]
+    imports: [
+        MatButtonModule,
+        MatIconModule,
+        LayoutModule,
+        CommonModule,
+        MatDialogModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        RouterModule
+    ]
 })
 export class ComponentsModule { }

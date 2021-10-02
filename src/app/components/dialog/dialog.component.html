@@ -1,39 +1,37 @@
-
 <div class="container">
   <mat-toolbar>
-    <span>Crear Publicación</span>
+    <span>Create Publication</span>
   </mat-toolbar>
   <mat-card style="margin-top: 10px">
-   <form>
+   <form [formGroup]="form" >
      <mat-grid-list cols="1" rowHeight="80px">
        <mat-grid-tile [colspan]="1" [rowspan]="1">
          <mat-form-field class="width">
            <mat-label>Post</mat-label>
-           <input matInput autocomplete="off">
+           <input matInput autocomplete="off" formControlName="title">
          </mat-form-field>
        </mat-grid-tile>
        <mat-grid-tile [colspan]="1" rowspan="2">
          <mat-form-field class="width">
            <mat-label>What do you want to post?</mat-label>
-           <input matInput autocomplete="off">
+           <input matInput autocomplete="off" formControlName="description">
          </mat-form-field>
        </mat-grid-tile>
        <mat-grid-tile [colspan]="1" rowspan="1">
          <mat-form-field class="width">
            <mat-label>Tags</mat-label>
-           <input matInput autocomplete="off">
+           <input matInput autocomplete="off" formControlName="tags">
          </mat-form-field>
        </mat-grid-tile>
        <mat-grid-tile>
          <div class="text-inside-grid">
-         <button mat-raised-button style="margin-right: 20px" >Cancel</button>
-         <button mat-raised-button color="primary" style="margin-right: 20px">Save in drafts</button>
-         <button mat-raised-button color="primary">Publish</button>
+         <button mat-dialog-close mat-raised-button style="margin-right: 20px" >Cancel</button>
+         <button mat-raised-button color="primary" style="margin-right: 20px">Save In Drafts</button>
+         <button type="submit" (click)="addPost()" routerLink="/" mat-dialog-close [disabled]="form.invalid" mat-raised-button color="primary">Publish</button>
          </div>
        </mat-grid-tile>
      </mat-grid-list>
    </form>
   </mat-card>
-
 </div>
 
