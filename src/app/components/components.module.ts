@@ -28,7 +28,8 @@ import {RouterModule} from "@angular/router";
   ],
   exports: [
     VideoPlayerComponent,
-    CarouselComponent
+    CarouselComponent,
+    BottomMenuComponent
   ],
     imports: [
         MatButtonModule,
