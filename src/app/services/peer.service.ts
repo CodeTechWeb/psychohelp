@@ -9,12 +9,6 @@ export class PeerService {
   peer: any;
 
   constructor() {
-    if (environment.production)
-      this.peer = new Peer()
-    else
-      this.peer = new Peer(undefined, {
-        host: 'localhost',
-        port: 3001
-      })
+    this.peer = new Peer(undefined, environment.peer)
   }
 }
