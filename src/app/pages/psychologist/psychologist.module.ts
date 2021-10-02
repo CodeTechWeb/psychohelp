@@ -8,10 +8,13 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatIconModule} from "@angular/material/icon";
 import {LayoutModule} from "../../components/layout/layout.module";
+import {PsychologistProfileComponent} from "./profile/psychologist-profile.component";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
-    HomePsychologistComponent
+    HomePsychologistComponent,
+    PsychologistProfileComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +25,7 @@ import {LayoutModule} from "../../components/layout/layout.module";
     MatDividerModule,
     MatIconModule,
     LayoutModule,
+    MatFormFieldModule,
   ]
 })
 export class PsychologistModule { }
