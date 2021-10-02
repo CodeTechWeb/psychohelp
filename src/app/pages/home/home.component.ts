@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ICarouselItem} from "../../components/carousel/Icarousel-item.metadata"
+import {CAROUSEL_DATA_ITEMS} from "../../components/carousel/carousel.const";
+import {Psychologist} from "../../types/psychologist";
+import {PsychologistService} from "../../services/psychologist.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogComponent} from "../../components/dialog/dialog.component";
 import {Publications} from "../../types/publications";
@@ -12,17 +16,23 @@ import {tap} from "rxjs/operators";
 })
 export class HomeComponent implements OnInit {
 
+  public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
   publications!: Publications[];
-  constructor(public dialog: MatDialog, private publicationsSvc: PublicationsService) { }
+  psychologist!: Psychologist[];
+  show!: boolean;
+  constructor(public dialog: MatDialog, private publicationsSvc: PublicationsService, private psychologistsSvc: PsychologistService) { }
 
   ngOnInit(): void {
     this.publicationsSvc.getPublications()
       .pipe(
-        tap( (publications: Publications[]) => this.publications =publications)
-      )
+        tap( (publications: Publications[]) => this.publications =publications))
       .subscribe();
 
-
+    this.psychologistsSvc.getPsychologists()
+      .pipe(
+        tap((psychologist: Psychologist[]) => this.psychologist = psychologist)
+      )
+      .subscribe();
   }
 
   openDialog(): void {
@@ -35,8 +45,5 @@ export class HomeComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-
-
-
 
 }

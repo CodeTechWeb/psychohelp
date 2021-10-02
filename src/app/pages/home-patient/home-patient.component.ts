@@ -23,8 +23,7 @@ export class HomePatientComponent implements OnInit {
   ngOnInit(): void {
     this.publicationsSvc.getPublications()
       .pipe(
-        tap( (publications: Publications[]) => this.publications =publications)
-      )
+        tap( (publications: Publications[]) => this.publications =publications))
       .subscribe();
 
     this.psychologistsSvc.getPsychologists()

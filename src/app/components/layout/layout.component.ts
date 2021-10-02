@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
   showFiller = false;
   fillerNav= [
-    {name: "home", routes: "", icon: "home"},
-    {name: "contacto", routes: "", icon: "person"},
-    {name: "calendario", routes: "", icon: "calendar_today"},
+    {name: "Home", routes: "", icon: "home"},
+    {name: "Contacto", routes: "", icon: "person"},
+    {name: "Calendario", routes: "", icon: "calendar_today"},
+    {name: "Metodo de Pago", routes: "", icon: "credit_card"},
+    {name: "Logout", routes: "", icon: "logout"},
   ]
   constructor() { }
 
