@@ -8,7 +8,12 @@
   </mat-toolbar>
   <mat-drawer #drawer class="example-sidenav w-60" mode="over">
     <div class="w-full">
-
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="nav.routes" *ngFor="let nav of fillerNav">
+          <mat-icon>{{ nav.icon }}</mat-icon>
+          {{ nav.name }}
+        </a>
+      </mat-nav-list>
     </div>
   </mat-drawer>
   <section class="w-full h-cont flex justify-center items-center">

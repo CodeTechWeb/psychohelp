@@ -14,8 +14,8 @@ export class PsychologistService {
     })
   }
   constructor(private http: HttpClient) { }
-  getPsychologists(): Observable<Psychologist> {
-    return this.http.get<Psychologist>('http://localhost:8080/psychologists?_expand=user', this.httpOptions)
+  getPsychologists(): Observable<any> {
+    return this.http.get<Psychologist[]>('http://localhost:8080/psychologists', this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
   }
   handleError(error: HttpErrorResponse) {
