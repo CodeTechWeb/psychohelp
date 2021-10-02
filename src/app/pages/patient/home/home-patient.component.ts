@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {PublicationsService} from "../../services/publications.service";
-import {Publications} from "../../types/publications";
+import {PublicationsService} from "../../../services/publications.service";
+import {Publications} from "../../../types/publications";
 import {tap} from "rxjs/operators";
-import {ICarouselItem} from "../../components/carousel/Icarousel-item.metadata"
-import {CAROUSEL_DATA_ITEMS} from "../../components/carousel/carousel.const";
-import {Psychologist} from "../../types/psychologist";
-import {PsychologistService} from "../../services/psychologist.service";
+import {ICarouselItem} from "../../../components/carousel/Icarousel-item.metadata"
+import {CAROUSEL_DATA_ITEMS} from "../../../components/carousel/carousel.const";
+import {Psychologist} from "../../../types/psychologist";
+import {PsychologistService} from "../../../services/psychologist.service";
 
 @Component({
   selector: 'app-home-patient',

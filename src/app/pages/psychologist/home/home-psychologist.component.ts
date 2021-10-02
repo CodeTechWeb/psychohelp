@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {ICarouselItem} from "../../components/carousel/Icarousel-item.metadata"
-import {CAROUSEL_DATA_ITEMS} from "../../components/carousel/carousel.const";
-import {Psychologist} from "../../types/psychologist";
-import {PsychologistService} from "../../services/psychologist.service";
+import {ICarouselItem} from "../../../components/carousel/Icarousel-item.metadata"
+import {CAROUSEL_DATA_ITEMS} from "../../../components/carousel/carousel.const";
+import {Psychologist} from "../../../types/psychologist";
+import {PsychologistService} from "../../../services/psychologist.service";
 import {MatDialog} from "@angular/material/dialog";
-import {DialogComponent} from "../../components/dialog/dialog.component";
-import {Publications} from "../../types/publications";
-import {PublicationsService} from "../../services/publications.service";
+import {DialogComponent} from "../../../components/dialog/dialog.component";
+import {Publications} from "../../../types/publications";
+import {PublicationsService} from "../../../services/publications.service";
 import {tap} from "rxjs/operators";
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html'
+  selector: 'app-home-psychologist',
+  templateUrl: './home-psychologist.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomePsychologistComponent implements OnInit {
 
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
   publications!: Publications[];
