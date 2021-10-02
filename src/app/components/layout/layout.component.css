@@ -4,7 +4,7 @@
   /* WebKit */
   height: -webkit-calc(100% - 64px);
   /* Opera */
-  height: -o-calc(100% - 64px);
+  height: calc(100% - 64px);
   /* Standard */
   height: calc(100% - 64px);
 }

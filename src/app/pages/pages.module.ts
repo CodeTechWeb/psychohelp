@@ -20,7 +20,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatListModule} from "@angular/material/list";
 import {MatCardModule} from "@angular/material/card";
-import { HomePatientComponent } from './home/home-patient/home-patient.component';
+import { HomePatientComponent } from './home-patient/home-patient.component';
 
 //@ts-ignore
 const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {withCredentials: '*'}};
