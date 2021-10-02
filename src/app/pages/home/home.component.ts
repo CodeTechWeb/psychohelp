@@ -13,7 +13,7 @@ import {tap} from "rxjs/operators";
 export class HomeComponent implements OnInit {
 
   publications!: Publications[];
-  constructor(private publicationsSvc: PublicationsService, public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private publicationsSvc: PublicationsService) { }
 
   ngOnInit(): void {
     this.publicationsSvc.getPublications()
@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
         tap( (publications: Publications[]) => this.publications =publications)
       )
       .subscribe();
+
 
   }
 
@@ -34,5 +35,8 @@ export class HomeComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+
+
+
 
 }
