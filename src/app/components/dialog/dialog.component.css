@@ -1,0 +1,8 @@
+.width{
+  width: 90%;
+}
+
+.text-inside-grid {
+  position: absolute;
+  right: 30px;
+}

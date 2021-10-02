@@ -1,0 +1,43 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {SignInComponent} from "./sign-in/sign-in.component";
+import {SignUpComponent} from "./sign-up/sign-up.component";
+import {PsychologistsComponent} from "./psychologists/psychologists.component";
+import {HomePatientComponent} from "./home/home-patient.component";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {LayoutModule} from "../../components/layout/layout.module";
+import {ComponentsModule} from "../../components/components.module";
+import {MatCardModule} from "@angular/material/card";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+
+
+
+@NgModule({
+  declarations: [
+    SignInComponent,
+    SignUpComponent,
+    PsychologistsComponent,
+    HomePatientComponent
+  ],
+  imports: [
+    CommonModule,
+    MatGridListModule,
+    LayoutModule,
+    ComponentsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule
+  ]
+})
+export class PatientModule { }
