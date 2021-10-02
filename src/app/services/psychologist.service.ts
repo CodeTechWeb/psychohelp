@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {Psychologist} from "../types/psychologist";
 import {catchError, retry} from "rxjs/operators";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class PsychologistService {
   }
   constructor(private http: HttpClient) { }
   getPsychologists(): Observable<any> {
-    return this.http.get<Psychologist[]>('http://localhost:8080/psychologists', this.httpOptions)
+    return this.http.get<Psychologist[]>(`${environment.apiUrl}/psychologists`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
   }
   handleError(error: HttpErrorResponse) {

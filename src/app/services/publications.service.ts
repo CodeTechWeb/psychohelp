@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {Publications} from "../types/publications";
 import {catchError, retry} from "rxjs/operators";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class PublicationsService {
   }
 
 
-  private apiURL = 'http://localhost:8080/publications';
+  private apiURL = `${environment.apiUrl}/publications`;
   constructor(private http: HttpClient) {
 
   }
