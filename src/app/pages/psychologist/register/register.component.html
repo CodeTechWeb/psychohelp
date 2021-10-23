@@ -51,7 +51,7 @@
             <mat-error *ngIf="passwordField?.invalid">{{passwordError}}</mat-error>
           </mat-form-field>
           <div class="flex justify-center">
-            <button type="submit" type="submit" mat-dialog-close [disabled]="form.invalid" mat-raised-button color="primary">Register</button>
+            <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Register</button>
           </div>
         </form>
       </mat-card>
