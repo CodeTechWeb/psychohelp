@@ -1,0 +1,32 @@
+<app-layout>
+  <div class="grid grid-cols-12 w-full h-full bg-white">
+    <div class="col-span-5 hidden md:block">
+      <img class="md:ml-5 lg:ml-40 ml-5 mt-32" max-height="500" max-width="800" src="https://cdn.discordapp.com/attachments/839568290078392383/898701933408313375/unknown.png">
+    </div>
+    <div class="col-span-12 md:col-span-7">
+      <h1 class="ml-4 mt-20 text-2xl font-medium">¡Bienvenido a PsychoHelp!</h1>
+      <h1 class="ml-4 mt-4 sm:text-xl text-lg">Ingrese sus datos correctamente</h1>
+      <mat-card class="mt-8 ml-4 mr-4 lg:mr-12 lg:w-auto sm:w-auto sm:ml:12">
+        <form class="w-full h-full" [formGroup]="form">
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input [type]="show ? 'text' : 'password'" matInput placeholder="password" formControlName="password">
+            <button matSuffix (click)="togglePassword()">
+              <mat-icon [color]="show === true ? '' : 'primary'" matSuffix>visibility</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="flex justify-center mb-3">
+            <button class="text-blue-500">Forgot password?</button>
+          </div>
+          <div class="flex justify-center">
+            <button type="submit" (click)="validateLogin()" mat-dialog-close [disabled]="form.invalid" mat-raised-button color="primary">Sign in</button>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</app-layout>
