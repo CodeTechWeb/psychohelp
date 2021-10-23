@@ -1,8 +1,11 @@
 export interface Patients {
   id: number;
-  age: string;
-  name: string;
+  firstname: string;
+  lastname: string;
+  birthdayDate: Date;
   email: string;
+  password: string;
   phone: number;
-  img: string;
+  gender: string;
+  state: string;
 }
