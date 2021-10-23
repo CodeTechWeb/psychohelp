@@ -4,6 +4,7 @@ import {Observable, throwError} from "rxjs";
 import {Psychologist} from "../types/psychologist";
 import {catchError, retry} from "rxjs/operators";
 import { environment } from 'src/environments/environment';
+import {Publications} from "../types/publications";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,24 @@ export class PsychologistService {
     return this.http.get<Psychologist[]>(`${environment.apiUrl}/psychologists`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
   }
+
+  create(psychologist: Psychologist):Observable<any>{
+    return this.http.post(`${environment.apiUrl}/psychologists`, JSON.stringify(psychologist), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+
+  }
+
+  login(email:string):Observable<any> {
+    return this.http.get(`${environment.apiUrl}/psychologists?email=${email}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
+
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log('An error occurred')
