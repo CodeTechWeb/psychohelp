@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
               .subscribe(res =>{
                   alert("Succesfully Registered");
                   this.form.reset();
-                  this.route.navigate(['login']);
+                  this.route.navigate(['psychologistLogin']);
                 },
                 err=>{
                   alert('Something is wrong');

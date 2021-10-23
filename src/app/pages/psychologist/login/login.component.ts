@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         if(res.length==0)
         {
           alert('Email or password are wrong')
-        } else if(res.length==1) {
+        } else {
           console.log(res.password);
           if (res[0].password===formValue.password) {
             this.route.navigate(['psychologist/home/', res[0].id])

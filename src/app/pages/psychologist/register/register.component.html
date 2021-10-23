@@ -32,9 +32,9 @@
           <mat-form-field class="w-full" appearance="fill">
             <mat-label>Genre</mat-label>
             <mat-select [disabled]="disableSelect.value" placeholder="genre"  formControlName="genre">
-              <mat-option value="option1">Male</mat-option>
-              <mat-option value="option2">Female</mat-option>
-              <mat-option value="option3">Other</mat-option>
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+              <mat-option value="Other">Other</mat-option>
             </mat-select>
             <mat-error *ngIf="genreField?.invalid">{{genreError}}</mat-error>
           </mat-form-field>
