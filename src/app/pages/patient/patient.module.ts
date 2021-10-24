@@ -16,6 +16,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {PatientProfileComponent} from "./profile/patient-profile.component";
+import {PatientDashboardComponent} from "./dashboard/patient-dashboard.component";
 
 
 
@@ -25,7 +26,8 @@ import {PatientProfileComponent} from "./profile/patient-profile.component";
     SignUpComponent,
     PsychologistsComponent,
     PatientProfileComponent,
-    HomePatientComponent
+    HomePatientComponent,
+    PatientDashboardComponent
   ],
   imports: [
     CommonModule,

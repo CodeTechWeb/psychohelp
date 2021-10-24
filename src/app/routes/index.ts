@@ -5,6 +5,7 @@ import psychologistRoutes from "./psychologist";
 import patientRoutes from "./patient"
 import { PsychologistProfileComponent } from "../pages/psychologist/profile/psychologist-profile.component";
 import { PatientProfileComponent } from "../pages/patient/profile/patient-profile.component";
+import {PatientDashboardComponent} from "../pages/patient/dashboard/patient-dashboard.component";
 
 const index: Routes = [
   { path: 'room/:id', component: RoomComponent },
@@ -12,6 +13,7 @@ const index: Routes = [
   ...psychologistRoutes,
   { path: 'psychoprofile', component: PsychologistProfileComponent },
   { path: 'patientprofile', component: PatientProfileComponent },
+  { path: 'patientdashboard', component: PatientDashboardComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

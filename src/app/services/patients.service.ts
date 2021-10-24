@@ -17,8 +17,9 @@ export class PatientsService {
   }
 
 
-  private apiURL = `${environment.apiUrl}/patients`;
+  private apiURL = `${environment.apiUrl}/users`;
   constructor(private http: HttpClient) { }
+
   getPatients(): Observable<any> {
     return this.http.get<Patients[]>(this.apiURL);
   }

@@ -1,0 +1,35 @@
+<app-layout>
+  <div style=";width: 100%">
+    <div class="m-4 ml-10 font-weight-medium" style="font-size:3rem">Tus pacientes</div>
+    <mat-grid-list cols="5">
+      <mat-grid-tile *ngFor="let item of patients">
+        <mat-card class="card_size mx-2" style="text-align: center;">
+          <mat-card-content>
+            <img mat-card-image src="{{item.photo}}" class="center" width="350px" height="350px">
+          </mat-card-content>
+          <mat-card-title>{{item.firstName + ' ' + item.lastName}}</mat-card-title>
+          <mat-card-subtitle>34{{item.age}} años</mat-card-subtitle>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</app-layout>
+
+
+<style>
+
+  .card_size {
+    max-width: 350px;
+  }
+
+  .circular_image {
+    border-radius: 50%;
+  }
+  .center {
+    display: block;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+</style>
