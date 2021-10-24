@@ -1,0 +1,60 @@
+<app-layout>
+  <div class="grid grid-cols-12 w-full h-full">
+    <div class="col-span-5 hidden md:block" >
+      <img class="md:ml-5 lg:ml-32 ml-5 mt-40" max-height="500" max-width="800" src="https://cdn.discordapp.com/attachments/839568290078392383/898701933408313375/unknown.png">
+    </div>
+    <div class="col-span-12 md:col-span-7">
+      <div class="ml-4 mt-8 flex">
+        <h1 class="sm:text-2xl text-lg">¡Regístrate en PsychoHelp!</h1>
+        <button routerLink="/login" class=" text-blue-500 text-lg sm:text-xl md:text-xl lg:text-xl mr-4  ml-auto lg:mr-12"
+                plain> Already registered? Sign in!</button>
+      </div>
+      <mat-card class="mt-8 ml-4 mr-4 lg:mr-12 lg:w-auto sm:w-auto sm:ml:12">
+        <form class="w-full h-full" [formGroup]="form" (ngSubmit)="addPsychologist()">
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="name" formControlName="name">
+            <mat-error *ngIf="nameField?.invalid">{{nameError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email" formControlName="email" >
+            <mat-error *ngIf="emailField?.invalid">{{emailError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="phone" formControlName="phone" >
+            <mat-error *ngIf="phoneField?.invalid">{{phoneError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Genre</mat-label>
+            <mat-select [disabled]="disableSelect.value" placeholder="genre"  formControlName="genre">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+              <mat-option value="Other">Other</mat-option>
+            </mat-select>
+            <mat-error *ngIf="genreField?.invalid">{{genreError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Cmp</mat-label>
+            <input matInput placeholder="cmp" formControlName="cmp" >
+            <mat-error *ngIf="cmpField?.invalid">{{cmpError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="password" formControlName="password" >
+            <mat-error *ngIf="passwordField?.invalid">{{passwordError}}</mat-error>
+          </mat-form-field>
+          <div class="flex justify-center">
+            <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Register</button>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</app-layout>
