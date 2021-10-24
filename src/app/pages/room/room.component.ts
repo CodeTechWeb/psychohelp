@@ -35,7 +35,7 @@ export class RoomComponent implements OnInit {
   }
 
   initPeer = () => {
-    const {peer} = this.peerService;
+    const { peer } = this.peerService;
 
     peer.on('open', (id: any ) => {
       const body = {
