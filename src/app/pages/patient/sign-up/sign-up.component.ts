@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {PatientsService} from "../../../services/patients.service";
 import {Patients} from "../../../types/patients";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-up',
@@ -11,17 +12,18 @@ export class SignUpComponent implements OnInit {
   form: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private _patientsService: PatientsService) {
+              private _patientsService: PatientsService,
+              private route: Router) {
     this.form = this.fb.group({
       id: [''],
-      firstname: [''],
-      lastname: [''],
-      email: [''],
-      password: [''],
-      state: [''],
-      phone: [''],
-      birthdayDate: [''],
-      gender: ['']
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      state: ['', Validators.required],
+      phone: ['', Validators.required],
+      birthdayDate: ['', Validators.required],
+      gender: ['', Validators.required]
     })
   }
 
@@ -29,6 +31,7 @@ export class SignUpComponent implements OnInit {
   }
 
   register() {
+
     const patient: Patients ={
       id: this.form.value.id,
       firstname: this.form.value.firstname,
@@ -42,7 +45,10 @@ export class SignUpComponent implements OnInit {
     }
 
     this._patientsService.create(patient)
-      .subscribe(rt=> console.log(rt),
+      .subscribe(res =>{
+        this.form.reset();
+        this.route.navigate(['/sign-in'])
+      },
         er => console.log(er),
         ()=>console.log('Terminado'),
         );
