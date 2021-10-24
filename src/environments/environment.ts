@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  socketUrl: 'http://localhost:3000/'
+  socketUrl: 'http://localhost:3000',
+  apiUrl: 'http://localhost:8080',
+  peer: { host: 'localhost', port: 3001}
 };
 
 /*

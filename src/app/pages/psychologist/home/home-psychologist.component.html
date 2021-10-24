@@ -1,0 +1,93 @@
+<app-layout>
+  <div class="w-full h-full">
+    <mat-grid-list [hidden]="" cols="8" rowHeight="100px">
+      <mat-grid-tile class="imgTile" [colspan]="1" [rowspan]="3">
+        <div align="center">
+          <img class="imgPerf ml-4 mr-10" width="250" height="250" src="https://medii.care/wp-content/uploads/sites/41/2020/08/dra-lytza-alvarez-perfil-01.png" alt="psychologist">
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="5" [rowspan]="17" >
+        <div class="w-full h-full">
+          <div class="mb-4 ml-5 mr-5 m-5">
+            <app-carousel [items]="carouselData"></app-carousel>
+          </div>
+          <mat-card class="mb-4 ml-5 mr-5 m-5" *ngFor="let publication of publications" >
+            <mat-card-title-group>
+              <mat-card-title>{{publication.title}}</mat-card-title>
+              <mat-card-subtitle> {{ publication.tags }}, </mat-card-subtitle>
+            </mat-card-title-group>
+            <div class="flex items-stretch self-center grid justify-items-stretch">
+              <mat-card-content>
+                {{publication.description}}
+              </mat-card-content>
+              <div class="self-center justify-self-end"><img width="250" height="250" [src]="publication.img" ></div>
+            </div>
+          </mat-card>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile  [colspan]="2" [rowspan]="20" >
+        <div class="h-full w-full" >
+          <ng-container *ngFor="let psychology of psychologist">
+            <mat-card class="example-card mb-10 ml-10 mr-10 m-10 justify-item-center"
+                      *ngIf="psychology.new!">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title> {{psychology.name}} </mat-card-title>
+                <mat-card-subtitle>{{psychology.email}}</mat-card-subtitle>
+              </mat-card-header>
+              <img height="150" max-width="100" [src]="psychology.img" alt="">
+              <mat-card-content>
+                <p>
+                  {{ psychology.about }}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                  <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-button>Share</button>
+              </mat-card-actions>
+            </mat-card>
+          </ng-container>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="btn1">
+          <button color="primary" mat-raised-button (click)="openDialog()">New Post</button>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile class="imgTile" [colspan]="1" [rowspan]="2">
+        <div>
+          <mat-card class="ml-5">
+            <button mat-button>Patients</button>
+            <mat-divider></mat-divider>
+            <button mat-button>Help Center</button>
+            <mat-divider></mat-divider>
+            <button mat-button>Guide</button>
+            <mat-divider></mat-divider>
+          </mat-card>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</app-layout>
+
+<style>
+  .go{
+    color: aqua;
+  }
+  .btn1 {
+    justify-content: flex-start;
+  }
+  .example-card {
+    max-width: 300px;
+  }
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size:auto;
+  }
+</style>
+

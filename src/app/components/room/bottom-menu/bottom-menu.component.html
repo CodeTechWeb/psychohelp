@@ -1,1 +1,7 @@
-<p>bottom-menu works!</p>
+<div class="fixed bottom-0 w-full bg-transparent flex justify-center items-center">
+  <div *ngFor="let option of options" class="mr-5">
+    <button mat-fab color="{{option.color.button}}" attr.aria-label="Example icon button with a {{option.label}} icon">
+      <mat-icon color="{{option.color.icon}}">{{option.icon}}</mat-icon>
+    </button>
+  </div>
+</div>

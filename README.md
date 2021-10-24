@@ -9,4 +9,4 @@ This app is using Concurrently to mount the front end and fake backend
 Run `npm start`
 
 * Angular App [http://localhost:4200](http://localhost:4200)
-* JSON Server [http://localhost:3000](http://localhost:3000)
+* JSON Server [http://localhost:8080](http://localhost:8080)
