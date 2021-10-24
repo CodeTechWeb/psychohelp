@@ -16,12 +16,14 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {PatientProfileComponent} from "./profile/patient-profile.component";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatRadioModule} from "@angular/material/radio";
+import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "../../app-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-
-
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import {MatNativeDateModule} from "@angular/material/core";
     PatientProfileComponent,
     HomePatientComponent
   ],
+
   imports: [
     CommonModule,
     MatGridListModule,
@@ -47,7 +50,12 @@ import {MatNativeDateModule} from "@angular/material/core";
     ReactiveFormsModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FlexLayoutModule,
+    MatRadioModule,
+    FormsModule,
+    AppRoutingModule
   ]
+
 })
 export class PatientModule { }

@@ -10,4 +10,6 @@ export interface Psychologist {
   active: boolean;
   new: boolean;
   img: string;
+  genre: string;
+  sessionType: string;
 }

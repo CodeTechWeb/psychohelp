@@ -2,4 +2,5 @@ import {HomePsychologistComponent} from "../pages/psychologist/home/home-psychol
 
 export default [
   {path: 'home-psychologist', component: HomePsychologistComponent}
+
 ]
