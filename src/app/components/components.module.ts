@@ -16,6 +16,7 @@ import {MatInputModule} from "@angular/material/input";
 import {CarouselComponent} from "./carousel/carousel.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import { PsychologistDialogComponent } from './psychologist-dialog/psychologist-dialog.component';
 
 
 
@@ -24,7 +25,8 @@ import {RouterModule} from "@angular/router";
     BottomMenuComponent,
     VideoPlayerComponent,
     DialogComponent,
-    CarouselComponent
+    CarouselComponent,
+    PsychologistDialogComponent
   ],
   exports: [
     VideoPlayerComponent,
