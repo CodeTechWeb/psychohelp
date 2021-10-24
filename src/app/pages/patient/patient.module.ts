@@ -16,6 +16,10 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {PatientProfileComponent} from "./profile/patient-profile.component";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatRadioModule} from "@angular/material/radio";
+import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "../../app-routing.module";
 
 
 
@@ -27,19 +31,23 @@ import {PatientProfileComponent} from "./profile/patient-profile.component";
     PatientProfileComponent,
     HomePatientComponent
   ],
-  imports: [
-    CommonModule,
-    MatGridListModule,
-    LayoutModule,
-    ComponentsModule,
-    MatCardModule,
-    MatDividerModule,
-    MatButtonModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule
-  ]
+    imports: [
+        CommonModule,
+        MatGridListModule,
+        LayoutModule,
+        ComponentsModule,
+        MatCardModule,
+        MatDividerModule,
+        MatButtonModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        FlexLayoutModule,
+        MatRadioModule,
+        FormsModule,
+        AppRoutingModule
+    ]
 })
 export class PatientModule { }
