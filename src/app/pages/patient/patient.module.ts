@@ -20,8 +20,10 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatRadioModule} from "@angular/material/radio";
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "../../app-routing.module";
-
-
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -31,23 +33,29 @@ import {AppRoutingModule} from "../../app-routing.module";
     PatientProfileComponent,
     HomePatientComponent
   ],
-    imports: [
-        CommonModule,
-        MatGridListModule,
-        LayoutModule,
-        ComponentsModule,
-        MatCardModule,
-        MatDividerModule,
-        MatButtonModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatIconModule,
-        FlexLayoutModule,
-        MatRadioModule,
-        FormsModule,
-        AppRoutingModule
-    ]
+
+  imports: [
+    CommonModule,
+    MatGridListModule,
+    LayoutModule,
+    ComponentsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FlexLayoutModule,
+    MatRadioModule,
+    FormsModule,
+    AppRoutingModule
+  ]
+
 })
 export class PatientModule { }

@@ -1,48 +1,37 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "firstName": "Alessandro",
-      "lastName": "Chumpitaz",
-      "photo": "http://placeimg.com/640/480/nature"
-    },
-    {
-      "id": 2,
-      "firstName": "Favio",
-      "lastName": "Viera",
-      "photo": "http://placeimg.com/640/480/nature"
-    },
-    {
-      "id": 3,
-      "firstName": "Jose",
-      "lastName": "Pain",
-      "photo": "http://placeimg.com/640/480/nature"
-    },
-    {
-      "id": 4,
-      "firstName": "Sebastian",
-      "lastName": "Alfaro",
-      "photo": "http://placeimg.com/640/480/nature"
-    },
-    {
-      "id": 5,
-      "firstName": "Fabricio",
-      "lastName": "Rosas",
-      "photo": "http://placeimg.com/640/480/nature"
-    }
-  ],
   "patients": [
     {
       "id": 1,
-      "userId": 2
+      "firstname": "Jose",
+      "lastname": "Tarazona",
+      "email": "jose@hotmail.com",
+      "password": "1234567",
+      "state": "single",
+      "phone": "123456789",
+      "birthdayDate": "28/04/2001",
+      "gender": "male"
     },
     {
       "id": 2,
-      "userId": 3
+      "firstname": "Ivan",
+      "lastname": "Tarazona",
+      "email": "ivan@hotmail.com",
+      "password": "1234567",
+      "state": "single",
+      "phone": "123456789",
+      "birthdayDate": "28/04/2001",
+      "gender": "male"
     },
     {
       "id": 3,
-      "userId": 4
+      "firstname": "Sebastian",
+      "lastname": "Alfaro",
+      "email": "sebastian@hotmail.com",
+      "password": "1234567",
+      "state": "single",
+      "phone": "123456789",
+      "birthdayDate": "28/04/2001",
+      "gender": "male"
     }
   ],
   "psychologists": [

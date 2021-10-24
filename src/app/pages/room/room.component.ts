@@ -26,8 +26,16 @@ export class RoomComponent implements OnInit {
     this.initSocket();
   }
 
+  muteAudio = () => {
+    this.currentStream.getAudioTracks()[0].enabled = !(this.currentStream.getAudioTracks()[0].enabled)
+  }
+
+  stopVideo = () => {
+    this.currentStream.getVideoTracks()[0].enabled = !(this.currentStream.getVideoTracks()[0].enabled)
+  }
+
   initPeer = () => {
-    const {peer} = this.peerService;
+    const { peer } = this.peerService;
 
     peer.on('open', (id: any ) => {
       const body = {
@@ -51,7 +59,6 @@ export class RoomComponent implements OnInit {
     this.webSocketService.cbEvent.subscribe((res: any) => {
       if (res.name === 'new-user') {
         const {idPeer} = res.data;
-        console.log(idPeer)
         this.sendCall(idPeer, this.currentStream);
       }
     })
@@ -82,7 +89,6 @@ export class RoomComponent implements OnInit {
   }
 
   sendCall = (idPeer: string, stream: any) => {
-    console.log('aaaa')
     const newUserCall = this.peerService.peer.call(idPeer, stream);
     if (!!newUserCall) {
       newUserCall.on('stream', (userStream: any) => {

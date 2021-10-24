@@ -1,22 +1,34 @@
 <section class="w-full h-full flex justify-center items-center">
-  <div class="w-3/4 md:w-1/2 lg:w-1/6">
-    <form class="flex flex-col">
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="email">
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
-        <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-
-      <button type ="submit" mat-raised-button color="primary">Login</button>
-    </form>
+  <div >
+    <img src="https://i.imgur.com/lpSuhh0.jpg" class="imgPerf ml-4 mr-2 mat-elevation-z1" width="800" height="800">
+  </div>
+  <div class="w-2/5">
+    <mat-card class="mb-4 mr-5">
+      <mat-card-title align="center">Bienvenido a PsychoHelp</mat-card-title>
+      <mat-card-subtitle align="center">Inicia sesión para continuar</mat-card-subtitle>
+      <form class=" flex justify-center items-center flex-col" [formGroup]="form">
+        <mat-form-field class="w-1/2" align="center" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com" formControlName="email">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-1/2" align="center" appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </form>
+      <div  class=" flex justify-center items-center flex-col space-y-4">
+      <button class="w-1/2" mat-raised-button color="primary" (click)="validateSignIn()">Login</button>
+        <button class="w-1/4" mat-button color="primary">Sign up</button>
+      </div>
+    </mat-card>
   </div>
 </section>
