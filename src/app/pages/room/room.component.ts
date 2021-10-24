@@ -59,7 +59,6 @@ export class RoomComponent implements OnInit {
     this.webSocketService.cbEvent.subscribe((res: any) => {
       if (res.name === 'new-user') {
         const {idPeer} = res.data;
-        console.log(idPeer)
         this.sendCall(idPeer, this.currentStream);
       }
     })
@@ -90,7 +89,6 @@ export class RoomComponent implements OnInit {
   }
 
   sendCall = (idPeer: string, stream: any) => {
-    console.log('aaaa')
     const newUserCall = this.peerService.peer.call(idPeer, stream);
     if (!!newUserCall) {
       newUserCall.on('stream', (userStream: any) => {
