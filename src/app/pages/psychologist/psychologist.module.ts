@@ -10,6 +10,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {LayoutModule} from "../../components/layout/layout.module";
 import {PsychologistProfileComponent} from "./profile/psychologist-profile.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatIconModule,
     LayoutModule,
     MatFormFieldModule,
+    MatInputModule,
   ]
 })
 export class PsychologistModule { }

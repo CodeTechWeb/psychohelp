@@ -11,7 +11,7 @@ import { SocketIoConfig, SocketIoModule } from "ngx-socket-io";
 
 import { environment} from "../../environments/environment";
 //@ts-ignore
-const config: SocketIoConfig = {url: environment.socketUrl, options: {withCredentials: '*'}};
+const config: SocketIoConfig = { url: environment.socketUrl, options: {withCredentials: '*'} };
 
 @NgModule({
   declarations: [
