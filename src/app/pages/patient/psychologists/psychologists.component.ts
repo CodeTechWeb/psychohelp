@@ -1,30 +1,84 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { PsychologistService } from "../../../services/psychologist.service";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
+import {Psychologist} from "../../../types/psychologist";
+import {MatDialog} from "@angular/material/dialog";
+import {PsychologistDialogComponent} from "../../../components/psychologist-dialog/psychologist-dialog.component"
+import psychologist from "../../../routes/psychologist";
 
 @Component({
   selector: 'app-psychologists',
   templateUrl: './psychologists.component.html'
 })
-export class PsychologistsComponent implements AfterViewInit {
+export class PsychologistsComponent implements OnInit{
   displayedColumns: string[] = ['name', 'photo'];
-  dataSource: MatTableDataSource<any>;
+  // dataSource: MatTableDataSource<any>;
+  //
+  // @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  psychologists: Psychologist[]=[];
+  filterGenre: Psychologist[]=[];
+  searchKey:string="";
+  genreSelected: string="";
+  typeSessionSelected:string="";
+  genres: string[]= ['Femenino', 'Masculino'];
+  typeSessions: string[]= ['Individual', 'Pareja'];
 
-  @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
-
-  constructor(private psychologistService: PsychologistService) {
-    this.dataSource = new MatTableDataSource<any>();
+  constructor(private psychologistService: PsychologistService, private dialog: MatDialog) {
+    // this.dataSource = new MatTableDataSource<any>();
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.getAllPsychologists()
+
+  ngOnInit(): void {
+    // this.dataSource.paginator = this.paginator;
+    this.getAllPsychologists();
+    //this.filter('Masculino');
+
   }
 
   getAllPsychologists() {
-    this.psychologistService.getPsychologists().subscribe((res :any) => {
-      this.dataSource.data = res;
+    this.psychologistService.getPsychologists().subscribe((response :any) => {
+      // this.dataSource.data = res;
+      this.psychologists = response;
+      this.filterGenre = response;
     })
   }
+
+  openPsychologistDialog(selectedPsychologist: any) {
+    const dialogRef= this.dialog.open(PsychologistDialogComponent,{
+      width: '700px',
+      height: '700px',
+      data:{
+        name: selectedPsychologist.name,
+        email: selectedPsychologist.email,
+        img: selectedPsychologist.img,
+        about: selectedPsychologist.about,
+        specialization: selectedPsychologist.specialization,
+        formation: selectedPsychologist.formation,
+      }
+    });
+  }
+
+  filterDeleting(genre:string){
+    this.psychologists.forEach((value,index)=>{
+      if(value.genre==genre) this.psychologists.splice(index,1);
+    });
+  }
+
+  filter(genre:string, sessionType:string){
+    this.filterGenre = this.psychologists
+      .filter((a:any)=>{
+        if(a.genre == genre && sessionType =='' ||genre==''&& sessionType==''){
+          return a;
+        }
+        if(a.sessionType==sessionType && genre==''|| sessionType==''&& genre==''){
+          return a;
+        }
+        if(a.genre==genre && a.sessionType==sessionType || sessionType==''&& genre==''){
+          return a;
+        }
+      })
+  }
+
+
 }
