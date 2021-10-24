@@ -3,7 +3,7 @@ import {RegisterComponent} from "../pages/psychologist/register/register.compone
 import {LoginComponent} from "../pages/psychologist/login/login.component";
 
 export default [
-  { path: 'psychologist/home/:id', component: HomePsychologistComponent },
+  { path: 'home-psychologist', component: HomePsychologistComponent },
   { path: 'psychologistRegister', component: RegisterComponent },
   { path: 'psychologistLogin', component: LoginComponent },
 ]
