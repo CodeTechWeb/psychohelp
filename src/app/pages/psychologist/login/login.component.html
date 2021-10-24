@@ -16,7 +16,8 @@
             <mat-label>Password</mat-label>
             <input [type]="show ? 'text' : 'password'" matInput placeholder="password" formControlName="password">
             <button matSuffix (click)="togglePassword()">
-              <mat-icon [color]="show === true ? '' : 'primary'" matSuffix>visibility</mat-icon>
+              <mat-icon *ngIf="show==false" matSuffix>visibility</mat-icon>
+              <mat-icon *ngIf="show==true" matSuffix>visibility_off</mat-icon>
             </button>
           </mat-form-field>
           <div class="flex justify-center mb-3">
