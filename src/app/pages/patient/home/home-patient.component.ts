@@ -6,6 +6,10 @@ import {ICarouselItem} from "../../../components/carousel/Icarousel-item.metadat
 import {CAROUSEL_DATA_ITEMS} from "../../../components/carousel/carousel.const";
 import {Psychologist} from "../../../types/psychologist";
 import {PsychologistService} from "../../../services/psychologist.service";
+import {Patients} from "../../../types/patients";
+import {PatientsService} from "../../../services/patients.service";
+import patient from "../../../routes/patient";
+import {identity} from "rxjs";
 
 @Component({
   selector: 'app-home-patient',
@@ -14,11 +18,13 @@ import {PsychologistService} from "../../../services/psychologist.service";
 })
 export class HomePatientComponent implements OnInit {
 
+  id: any;
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
   publications!: Publications[];
   psychologist!: Psychologist[];
+  patient!: Patients[];
   show!: boolean;
-  constructor(private publicationsSvc: PublicationsService, private psychologistsSvc: PsychologistService) { }
+  constructor(private publicationsSvc: PublicationsService, private psychologistsSvc: PsychologistService, private patientsSvc: PatientsService) { }
 
   ngOnInit(): void {
     this.publicationsSvc.getPublications()
@@ -31,6 +37,12 @@ export class HomePatientComponent implements OnInit {
         tap((psychologist: Psychologist[]) => this.psychologist = psychologist)
       )
       .subscribe();
+    this.patientsSvc.getAll()
+      .pipe(
+        tap((patient: Patients[]) => this.patient = patient)
+      )
+      .subscribe();
   }
+
 
 }
