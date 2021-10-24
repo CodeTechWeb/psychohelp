@@ -49,6 +49,14 @@ export class PatientsService {
         catchError(this.handleError));
   }
 
+  getEmail(email: string): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/patients?email=${email}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
+
   getAll(): Observable<any> {
     return this.http.get<Patients[]>(this.apiURL)
       .pipe(
