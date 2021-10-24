@@ -39,6 +39,7 @@ import {MatSelectModule} from "@angular/material/select";
     ReactiveFormsModule,
     RouterModule,
     MatSelectModule,
+
   ]
 })
 export class PsychologistModule { }
