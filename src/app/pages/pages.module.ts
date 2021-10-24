@@ -4,9 +4,6 @@ import { PageNotFoundComponent } from "./common/page-not-found/page-not-found.co
 
 import { ComponentsModule } from "../components/components.module";
 import { LayoutModule } from "../components/layout/layout.module";
-import {CommonModule} from "@angular/common";
-import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
-import {environment} from "../../environments/environment";
 import { CommonModule} from "@angular/common";
 import { PatientModule } from "./patient/patient.module";
 import { PsychologistModule } from "./psychologist/psychologist.module";
