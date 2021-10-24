@@ -1,44 +1,85 @@
 <section class="w-full h-full flex justify-center items-center">
-  <div class="w-3/4 md:w-1/2 lg:w-1/4">
-    <form class="flex flex-col justify-between">
-      <div class="flex flex-col md:flex-row">
-        <mat-form-field appearance="fill" class="w-full sm:w-1/2">
-          <mat-label>First Name</mat-label>
-          <input matInput>
+  <div >
+    <img src="https://i.imgur.com/lpSuhh0.jpg" class="imgPerf ml-4 mr-2 mat-elevation-z1" width="800" height="800">
+  </div>
+  <div class="w-2/5">
+    <mat-card class="mb-4 mr-5">
+      <mat-card-title align="center">Únete a PsychoHelp</mat-card-title>
+      <mat-card-subtitle align="center">Registrate para continuar</mat-card-subtitle>
+      <form class=" flex justify-center items-center flex-col" [formGroup]="form" >
+        <table class="w-3/5" cellspacing="1">
+          <tr>
+            <mat-form-field class="w-1/2 " hintLabel="Max 30 characters" appearance="outline">
+              <mat-label>Firstname</mat-label>
+              <input matInput #inputFirstname maxlength="30" placeholder="Ex. Admin" formControlName="firstname" required>
+              <mat-hint align="end">{{inputFirstname.value?.length || 0}}/30</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="w-1/2" hintLabel="Max 30 characters" appearance="outline">
+              <mat-label>Lastname</mat-label>
+              <input matInput #inputLastname maxlength="30" placeholder="Ex. Admin" formControlName="lastname">
+              <mat-hint align="end">{{inputLastname.value?.length || 0}}/30</mat-hint>
+            </mat-form-field>
+          </tr>
+        </table>
+        <mat-form-field class="w-3/5" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com" formControlName="email" required>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
-        <mat-form-field appearance="fill" class="w-full sm:w-1/2">
-          <mat-label>Last Name</mat-label>
-          <input matInput>
+
+        <mat-form-field class="w-3/5" appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
         </mat-form-field>
+
+        <mat-form-field class="w-3/5" appearance="outline">
+          <mat-label>Marital status</mat-label>
+          <mat-select formControlName="state" required>
+            <mat-option value="single">Single</mat-option>
+            <mat-option value="married">Married</mat-option>
+            <mat-option value="widower">Widower</mat-option>
+            <mat-option value="divorced">Divorced</mat-option>
+          </mat-select>
+          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="w-3/5" hintLabel="Max 9 digits" appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput #inputPhone maxlength="9" placeholder="Ex. 987654321" formControlName="phone" required>
+          <mat-hint align="end">{{inputPhone.value?.length || 0}}/9</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="w-3/5" appearance="outline">
+          <mat-label>Birthday date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="birthdayDate" required>
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="w-3/5" appearance="outline">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender" required>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="others">Others</mat-option>
+          </mat-select>
+          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+        </mat-form-field>
+      </form>
+      <div  class=" flex justify-center items-center flex-col space-y-4">
+        <button class="w-1/2"  mat-raised-button color="primary" type="submit" (click)="register()" routerLink="sign-in" [disabled]="form.invalid">Register</button>
       </div>
-      <mat-form-field appearance="fill" class="w-full">
-        <mat-label>Address</mat-label>
-        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="email">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="passwordHide ? 'password' : 'text'">
-        <button type="button" mat-icon-button matSuffix (click)="passwordHide = !passwordHide"
-                [attr.aria-label]="'passwordHide password'"
-                [attr.aria-pressed]="passwordHide">
-          <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Confirm Password</mat-label>
-        <input matInput [type]="passwordConfirmationHide ? 'password' : 'text'">
-        <button type="button" mat-icon-button matSuffix (click)="passwordConfirmationHide = !passwordConfirmationHide"
-                [attr.aria-label]="'passwordHide password'"
-                [attr.aria-pressed]="passwordConfirmationHide">
-          <mat-icon>{{passwordConfirmationHide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-      <div class="flex justify-center">
-        <button type ="submit" mat-raised-button color="primary">Sign Up</button></div>
-    </form>
+    </mat-card>
   </div>
 </section>
