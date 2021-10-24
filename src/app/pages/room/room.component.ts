@@ -26,6 +26,14 @@ export class RoomComponent implements OnInit {
     this.initSocket();
   }
 
+  muteAudio = () => {
+    this.currentStream.getAudioTracks()[0].enabled = !(this.currentStream.getAudioTracks()[0].enabled)
+  }
+
+  stopVideo = () => {
+    this.currentStream.getVideoTracks()[0].enabled = !(this.currentStream.getVideoTracks()[0].enabled)
+  }
+
   initPeer = () => {
     const {peer} = this.peerService;
 

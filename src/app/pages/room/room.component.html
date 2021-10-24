@@ -2,5 +2,8 @@
   <div class="w-full h-full grid grid-cols-2 grid-rows-1 bg-black pt-20">
     <app-video-player [stream]="user" *ngFor="let user of userList"></app-video-player>
   </div>
-  <app-bottom-menu></app-bottom-menu>
+  <app-bottom-menu
+    (muteAudio) ="muteAudio()"
+    (stopVideo)="stopVideo()"
+  ></app-bottom-menu>
 </app-layout>
