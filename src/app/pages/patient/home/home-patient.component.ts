@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {PublicationsService} from "../../../services/publications.service";
-import {Publications} from "../../../types/publications";
-import {tap} from "rxjs/operators";
-import {ICarouselItem} from "../../../components/carousel/Icarousel-item.metadata"
-import {CAROUSEL_DATA_ITEMS} from "../../../components/carousel/carousel.const";
-import {Psychologist} from "../../../types/psychologist";
-import {PsychologistService} from "../../../services/psychologist.service";
-import {Patients} from "../../../types/patients";
-import {PatientsService} from "../../../services/patients.service";
-import patient from "../../../routes/patient";
-import {identity} from "rxjs";
+import { tap } from "rxjs/operators";
+import { Patients } from "../../../types/patients";
+import { Publications } from "../../../types/publications";
+import { Psychologist } from "../../../types/psychologist";
+import { ICarouselItem } from "../../../components/carousel/Icarousel-item.metadata";
+import { CAROUSEL_DATA_ITEMS } from "../../../components/carousel/carousel.const";
+import { PsychologistService } from "../../../services/psychologist.service";
+import { PatientsService } from "../../../services/patients.service";
+import { PublicationsService } from "../../../services/publications.service";
 
 @Component({
   selector: 'app-home-patient',
@@ -43,6 +41,4 @@ export class HomePatientComponent implements OnInit {
       )
       .subscribe();
   }
-
-
 }
