@@ -24,6 +24,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import { ScheduleComponent } from './psychologists/schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     SignUpComponent,
     PsychologistsComponent,
     PatientProfileComponent,
-    HomePatientComponent
+    HomePatientComponent,
+    ScheduleComponent
   ],
 
   imports: [

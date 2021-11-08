@@ -1,11 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { PsychologistService } from "../../../services/psychologist.service";
-import { MatPaginator } from "@angular/material/paginator";
-import { MatTableDataSource } from "@angular/material/table";
 import {Psychologist} from "../../../types/psychologist";
 import {MatDialog} from "@angular/material/dialog";
 import {PsychologistDialogComponent} from "../../../components/psychologist-dialog/psychologist-dialog.component"
-import psychologist from "../../../routes/psychologist";
 
 @Component({
   selector: 'app-psychologists',

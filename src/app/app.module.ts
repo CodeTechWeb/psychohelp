@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from "./components/layout/layout.module";
 import { ComponentsModule } from "./components/components.module";
 import { PagesModule } from "./pages/pages.module";
+import { ScheduleComponent } from './src/app/pages/psychologist/schedule/schedule.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ScheduleComponent
   ],
   imports: [
     CommonModule,
