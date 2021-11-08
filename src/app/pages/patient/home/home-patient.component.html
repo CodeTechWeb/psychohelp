@@ -1,96 +1,44 @@
 <app-layout>
-  <div class="main w-full h-full">
-    <mat-grid-list cols="8" rowHeight="100px">
-      <mat-grid-tile [colspan]="1" [rowspan]="3">
-        <div align="center" >
-          <img class="imgPerf ml-4 mr-10" width="250" height="250" src="https://www.ahora.com.pe/wp-content/uploads/2021/09/1280x720-Elon-Musk-Getty.jpg">
-          <p >User:</p>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="5" [rowspan]="17" >
-        <div class="w-full h-full">
-          <div class="mb-4 ml-5 mr-5 m-5">
-            <app-carousel [items]="carouselData"></app-carousel>
-          </div>
-          <mat-card class="mb-4 ml-5 mr-5 m-5" *ngFor="let publication of publications" >
-            <mat-card-title-group>
-              <mat-card-title>{{publication.title}}</mat-card-title>
-              <mat-card-subtitle> {{ publication.tags }}, </mat-card-subtitle>
-            </mat-card-title-group>
-            <div class="flex items-stretch self-center grid justify-items-stretch">
-              <mat-card-content>
-                {{publication.description}}
-              </mat-card-content>
-              <div class="self-center justify-self-end"><img width="250" height="250" [src]="publication.img" ></div>
+  <div class="flex w-full h-full justify-between items-center bg-gray-100">
+    <div class="w-full h-full xl:w-5/6">
+      <div class="hidden md:block p-4 ">
+        <app-carousel [items]="carouselData"></app-carousel>
+      </div>
+      <div class="publications flex flex-wrap justify-center items-start overflow-y-scroll p-2">
+        <mat-card
+          class="max-w-full md:max-w-sm lg:max-w-sm xl:max-w-xs m-5"
+          *ngFor="let publication of publications"
+        >
+          <img
+            mat-card-image
+            class='max-w-none'
+            [src]="publication.img"
+            alt="{{ publication.title }}"
+          >
+          <mat-card-header>
+            <mat-card-title>{{ publication.title }}</mat-card-title>
+            <mat-card-subtitle>{{ publication.tags }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions align="end">
+            <button mat-raised-button color="primary">Read Full Note</button>
+            <button mat-stroked-button color="accent">Share</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    <div class="hidden xl:flex flex-col justify-start lg:w-1/6 h-full p-2 pr-5">
+      <h1 class="text-2xl">Popular Psychologists</h1>
+      <div *ngFor="let psychology of psychologist">
+        <mat-card class="my-2">
+          <mat-card-header>
+            <div mat-card-avatar class="bg-cover">
+              <img [src]="psychology.img" alt="{{psychology.name}}" class="bg-cover">
             </div>
-          </mat-card>
-        </div>
-      </mat-grid-tile>
-
-      <mat-grid-tile  [colspan]="2" [rowspan]="20" >
-        <div class="h-full w-full" >
-          <ng-container *ngFor="let psychology of psychologist">
-            <mat-card class="example-card mb-10 ml-10 mr-10 m-10 justify-item-center"
-                       *ngIf="psychology.new!">
-              <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title> {{psychology.name}} </mat-card-title>
-                <mat-card-subtitle>{{psychology.email}}</mat-card-subtitle>
-              </mat-card-header>
-              <img align="center" height="150" max-width="100" [src]="psychology.img">
-              <mat-card-content>
-                <p>
-                  {{ psychology.about }}
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>
-                  <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
-                    <mat-icon>favorite</mat-icon>
-                  </button>
-                </button>
-                <button mat-button>SHARE</button>
-              </mat-card-actions>
-            </mat-card>
-          </ng-container>
-        </div>
-      </mat-grid-tile>
-
-      <mat-grid-tile class="imgTile" [colspan]="1" [rowspan]="2">
-        <div>
-          <mat-card class="ml-5">
-            <button mat-button [routerLink]="'psychologists'">Psicólogos</button>
-            <mat-divider></mat-divider>
-            <button mat-button>Centro de Ayuda</button>
-            <mat-divider></mat-divider>
-            <button mat-button>Guía</button>
-            <mat-divider></mat-divider>
-          </mat-card>
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list>
+            <mat-card-title>{{ psychology.name }}</mat-card-title>
+            <mat-card-subtitle>{{ psychology.email }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
   </div>
 </app-layout>
-
-<style>
-  .go{
-    color: aqua;
-  }
-  .btn1 {
-    justify-content: flex-start;
-  }
-  .example-card {
-    max-width: 300px;
-  }
-
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size:auto;
-  }
-
-  .imgPerf {
-    border-radius: 10%;
-  }
-
-</style>
-

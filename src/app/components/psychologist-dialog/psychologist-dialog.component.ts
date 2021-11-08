@@ -5,7 +5,6 @@ import {PsychologistsComponent} from "../../pages/patient/psychologists/psycholo
 @Component({
   selector: 'app-psychologist-dialog',
   templateUrl: './psychologist-dialog.component.html',
-  styleUrls: ['./psychologist-dialog.component.css']
 })
 export class PsychologistDialogComponent implements OnInit {
   receivedPsychologist:any;
@@ -22,5 +21,4 @@ export class PsychologistDialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

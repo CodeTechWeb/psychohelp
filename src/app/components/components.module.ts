@@ -33,19 +33,19 @@ import { PsychologistDialogComponent } from './psychologist-dialog/psychologist-
     CarouselComponent,
     BottomMenuComponent
   ],
-    imports: [
-        MatButtonModule,
-        MatIconModule,
-        LayoutModule,
-        CommonModule,
-        MatDialogModule,
-        MatToolbarModule,
-        MatCardModule,
-        MatGridListModule,
-        MatFormFieldModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        RouterModule
-    ]
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    LayoutModule,
+    CommonModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    RouterModule
+  ]
 })
 export class ComponentsModule { }
