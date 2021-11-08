@@ -53,8 +53,4 @@ export class PublicationsService {
       );
 
   }
-
-
-
-
 }
