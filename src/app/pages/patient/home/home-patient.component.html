@@ -1,12 +1,12 @@
 <app-layout>
   <div class="flex w-full h-full justify-between items-center bg-gray-100">
-    <div class="w-full h-full lg:w-5/6">
-      <div class="p-4">
+    <div class="w-full h-full xl:w-5/6">
+      <div class="hidden md:block p-4 ">
         <app-carousel [items]="carouselData"></app-carousel>
       </div>
-      <div class="publications flex flex-wrap justify-between items-start overflow-y-scroll p-2">
+      <div class="publications flex flex-wrap justify-center items-start overflow-y-scroll p-2">
         <mat-card
-          class="max-w-full md:max-w-sm xl:max-w-xs m-2"
+          class="max-w-full md:max-w-sm lg:max-w-sm xl:max-w-xs m-5"
           *ngFor="let publication of publications"
         >
           <img
@@ -26,7 +26,7 @@
         </mat-card>
       </div>
     </div>
-    <div class="hidden md:flex flex-col justify-start lg:w-1/6 h-full p-2 pr-5">
+    <div class="hidden xl:flex flex-col justify-start lg:w-1/6 h-full p-2 pr-5">
       <h1 class="text-2xl">Popular Psychologists</h1>
       <div *ngFor="let psychology of psychologist">
         <mat-card class="my-2">
