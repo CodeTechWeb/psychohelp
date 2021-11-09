@@ -76,6 +76,4 @@ export class PsychologistsComponent implements OnInit{
         }
       })
   }
-
-
 }

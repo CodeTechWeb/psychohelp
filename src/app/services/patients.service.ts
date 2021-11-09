@@ -42,7 +42,7 @@ export class PatientsService {
         catchError(this.handleError));
   }
 
-  getById(id: any): Observable<Patients> {
+  getPatientById(id: any): Observable<Patients> {
     return this.http.get<Patients>(`${this.apiURL}/${id}`, this.httpOptions)
       .pipe(
         retry(2),
@@ -62,6 +62,13 @@ export class PatientsService {
       .pipe(
         retry(2),
         catchError(this.handleError));
+  }
+
+  getAllPsychologistPatients(psychologistId: string) : Observable<any> {
+    return this.http.get<Patients[]>(`${this.apiURL}/${psychologistId}/patients`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
   }
 
   update(id: any, item: any): Observable<Patients> {
