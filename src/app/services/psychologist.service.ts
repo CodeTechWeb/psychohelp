@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {Observable, throwError} from "rxjs";
-import {Psychologist} from "../types/psychologist";
-import {catchError, retry} from "rxjs/operators";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { Psychologist } from "../types/psychologist";
+import {catchError, retry } from "rxjs/operators";
 import { environment } from 'src/environments/environment';
-import {Publications} from "../types/publications";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +15,13 @@ export class PsychologistService {
     })
   }
   constructor(private http: HttpClient) { }
-  getPsychologists(): Observable<any> {
+  getPsychologists(): Observable<Psychologist[]> {
     return this.http.get<Psychologist[]>(`${environment.apiUrl}/psychologists`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError))
+  }
+
+  getPsychologist(psychologistId: string): Observable<Psychologist> {
+    return this.http.get<Psychologist>(`${environment.apiUrl}/psychologists/${psychologistId}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
   }
 
@@ -27,7 +31,6 @@ export class PsychologistService {
         retry(2),
         catchError(this.handleError)
       );
-
   }
 
   login(email:string):Observable<any> {

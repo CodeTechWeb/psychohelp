@@ -15,14 +15,19 @@ import { MatInputModule } from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { LoginComponent } from './login/login.component';
-import {MatSelectModule} from "@angular/material/select";
+import { MatSelectModule } from "@angular/material/select";
+import { LogbookComponent } from "./logbook/logbook.component";
+import { PatientsComponent } from "./patients/patients.component";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
     HomePsychologistComponent,
     PsychologistProfileComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    LogbookComponent,
+    PatientsComponent
   ],
   imports: [
     CommonModule,
@@ -39,6 +44,7 @@ import {MatSelectModule} from "@angular/material/select";
     ReactiveFormsModule,
     RouterModule,
     MatSelectModule,
+    MatTableModule,
 
   ]
 })

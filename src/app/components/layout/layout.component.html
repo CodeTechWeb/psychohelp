@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container w-full h-full">
-  <mat-toolbar color="primary" class="w-screen">
+  <mat-toolbar [color]="!domain ? 'primary' : 'accent'" class="w-screen">
     <button type="button" (click)="drawer.toggle()"
             mat-icon-button aria-label="icon button with menu icon">
       <mat-icon>menu</mat-icon>
@@ -9,9 +9,9 @@
   <mat-drawer #drawer class="example-sidenav w-60" mode="over">
     <div class="w-full">
       <mat-nav-list>
-        <a mat-list-item [routerLink]="nav.routes" *ngFor="let nav of fillerNav">
-          <mat-icon>{{ nav.icon }}</mat-icon>
-          {{ nav.name }}
+        <a mat-list-item [href]="option.route" g *ngFor="let option of options">
+          <mat-icon>{{ option.icon }}</mat-icon>
+          {{ option.name }}
         </a>
       </mat-nav-list>
     </div>
