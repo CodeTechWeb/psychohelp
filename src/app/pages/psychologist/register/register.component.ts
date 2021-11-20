@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
 
   addPsychologist() {
     if(this.form.valid) {
-      let psychologist: Psychologist = {
+      let psychologist: any = {
         id: this.form.value.id,
         name: this.form.value.name,
         age: this.form.value.age,
@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
         sessionType: '',
         cmp: parseInt(this.form.value.cmp),
         password: this.form.value.password,
-        img: "https://gentequebrilla.azurewebsites.net/wp-content/uploads/2019/04/12014-1024x604.jpg",
+        image: "https://gentequebrilla.azurewebsites.net/wp-content/uploads/2019/04/12014-1024x604.jpg",
       }
       this.psychologistsSvc.login(this.form.value.email)
         .subscribe(res =>{

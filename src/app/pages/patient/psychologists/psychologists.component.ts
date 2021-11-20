@@ -34,7 +34,7 @@ export class PsychologistsComponent implements OnInit{
   }
 
   getAllPsychologists() {
-    this.psychologistService.getPsychologists().subscribe((response :any) => {
+    this.psychologistService.getAllPsychologists().subscribe((response :any) => {
       // this.dataSource.data = res;
       this.psychologists = response;
       this.filterGenre = response;

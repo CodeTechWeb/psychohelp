@@ -4,6 +4,7 @@ import { Observable, throwError } from "rxjs";
 import { Psychologist } from "../types/psychologist";
 import {catchError, retry } from "rxjs/operators";
 import { environment } from 'src/environments/environment';
+import Response from "../types/response";
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class PsychologistService {
     })
   }
   constructor(private http: HttpClient) { }
-  getPsychologists(): Observable<Psychologist[]> {
-    return this.http.get<Psychologist[]>(`${environment.apiUrl}/psychologists`, this.httpOptions)
+  getAllPsychologists(): Observable<Response<Psychologist[]>> {
+    return this.http.get<Response<Psychologist[]>>(`${environment.apiUrl}/psychologists`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
   }
 

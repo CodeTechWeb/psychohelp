@@ -5,9 +5,10 @@ import {Psychologist} from "../../../types/psychologist";
 import {PsychologistService} from "../../../services/psychologist.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogComponent} from "../../../components/dialog/dialog.component";
-import {Publications} from "../../../types/publications";
+import {Publication} from "../../../types/publication";
 import {PublicationsService} from "../../../services/publications.service";
 import {tap} from "rxjs/operators";
+import Response from "../../../types/response";
 
 
 @Component({
@@ -17,20 +18,20 @@ import {tap} from "rxjs/operators";
 export class HomePsychologistComponent implements OnInit {
 
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
-  publications!: Publications[];
+  publications!: Publication[];
   psychologist!: Psychologist[];
   show!: boolean;
   constructor(public dialog: MatDialog, private publicationsSvc: PublicationsService, private psychologistsSvc: PsychologistService) { }
 
   ngOnInit(): void {
-    this.publicationsSvc.getPublications()
+    this.publicationsSvc.getAllPublications()
       .pipe(
-        tap( (publications: Publications[]) => this.publications =publications))
+        tap( (response: Response<Publication[]>) => this.publications = response.content))
       .subscribe();
 
-    this.psychologistsSvc.getPsychologists()
+    this.psychologistsSvc.getAllPsychologists()
       .pipe(
-        tap((psychologist: Psychologist[]) => this.psychologist = psychologist)
+        tap((response: Response<Psychologist[]>) => this.psychologist = response.content)
       )
       .subscribe();
   }
@@ -45,5 +46,4 @@ export class HomePsychologistComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-
 }

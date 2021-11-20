@@ -19,7 +19,7 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     },
     subtitle: 'Esto es una gran descripción',
     link: '/',
-    image: '../../../assets/2.jpg'
+    image: 'https://cdn.discordapp.com/attachments/879398511362338856/893632580879011860/PHOTO-2021-10-01-17-45-47.jpg'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     },
     subtitle: 'Esto es una gran descripción',
     link: '/',
-    image: '../../../assets/1.jpg3'
+    image: 'https://cdn.discordapp.com/attachments/879398511362338856/893632580879011860/PHOTO-2021-10-01-17-45-47.jpg'
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     },
     subtitle: 'Esto es una gran descripción',
     link: '/',
-    image: 'assets/images/4.jpg'
+    image: 'https://cdn.discordapp.com/attachments/879398511362338856/893632580879011860/PHOTO-2021-10-01-17-45-47.jpg'
   },
   {
     id: 5,
@@ -49,6 +49,6 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     },
     subtitle: 'Esto es una gran descripción',
     link: '/',
-    image: 'assets/images/5.jpg'
+    image: 'https://cdn.discordapp.com/attachments/879398511362338856/893632580879011860/PHOTO-2021-10-01-17-45-47.jpg'
   }
 ];
