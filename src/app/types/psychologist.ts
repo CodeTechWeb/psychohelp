@@ -1,17 +1,18 @@
 export interface Psychologist {
-  id: number;
-  name: string;
-  age: number;
-  email: string;
-  phone: number;
-  specialization: [string];
-  formation: [string];
   about: string;
   active: boolean;
-  new: boolean;
-  img: string;
-  password: string;
-  sessionType: string;
+  birthDate: string;
   cmp: number;
+  dni: string;
+  email: string;
+  formation: string
+  fresh: boolean;
   genre: string;
+  id: number;
+  image: string;
+  name: string;
+  password: string;
+  phone: string;
+  sessionType: string;
+  specialization: string;
 }

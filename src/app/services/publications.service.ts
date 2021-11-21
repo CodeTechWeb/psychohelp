@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {Observable, throwError} from "rxjs";
-import {Publications} from "../types/publications";
-import {catchError, retry} from "rxjs/operators";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { Publication } from "../types/publication";
+import { catchError, retry } from "rxjs/operators";
 import { environment } from 'src/environments/environment';
+import Response from "../types/response";
 
 @Injectable({
   providedIn: 'root'
 })
-
 
 export class PublicationsService {
 
@@ -18,10 +18,22 @@ export class PublicationsService {
     })
   }
 
-
   private apiURL = `${environment.apiUrl}/publications`;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {}
 
+  getAllPublications(): Observable<Response<Publication[]>> {
+    return this.http.get<Response<Publication[]>>(this.apiURL)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+  addPublications(publication: Publication){
+    return this.http.post(this.apiURL, JSON.stringify(publication), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
   }
 
   handleError(error: HttpErrorResponse) {
@@ -36,21 +48,5 @@ export class PublicationsService {
     }
     // Return Observable with Error Message to Client
     return throwError('Something happened with request, please try again later');
-  }
-
-  getPublications(): Observable<any> {
-    return this.http.get<Publications[]>(this.apiURL)
-      .pipe(
-        retry(2),
-        catchError(this.handleError));
-  }
-
-  addPublications(publication: Publications){
-    return this.http.post(this.apiURL, JSON.stringify(publication), this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      );
-
   }
 }

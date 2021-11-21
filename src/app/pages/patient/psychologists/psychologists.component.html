@@ -1,6 +1,6 @@
 <app-layout>
   <div class="w-full h-full">
-    <mat-grid-list cols="8">
+    <mat-grid-list cols="8" class="mt-20">
       <mat-grid-tile [colspan]="2" [rowspan]="3">
         <div class="content">
           <div fxLayout="row wrap">
@@ -32,7 +32,7 @@
             <div fxFlex="33%" *ngFor="let psychologist of filterGenre">
               <mat-card class="mat-elevation-z4">
                 <mat-card-header>
-                  <img mat-card-avatar [src]="psychologist.img">
+                  <img mat-card-avatar [src]="psychologist.image">
                   <mat-card-title style="font-size: 18px">{{psychologist.name}}</mat-card-title>
                   <mat-card-subtitle>{{psychologist.email}}</mat-card-subtitle>
                 </mat-card-header>

@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from "./components/layout/layout.module";
 import { ComponentsModule } from "./components/components.module";
 import { PagesModule } from "./pages/pages.module";
-import { ScheduleComponent } from './src/app/pages/psychologist/schedule/schedule.component';
+import { NgxStripeModule } from "ngx-stripe";
+import { environment } from "../environments/environment";
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ScheduleComponent
+    AppComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +24,7 @@ import { ScheduleComponent } from './src/app/pages/psychologist/schedule/schedul
     LayoutModule,
     ComponentsModule,
     PagesModule,
+    NgxStripeModule.forRoot(environment.stripeKey)
   ],
   providers: [],
   bootstrap: [AppComponent]

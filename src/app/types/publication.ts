@@ -1,7 +1,7 @@
-export interface Publications {
+export interface Publication {
   id: number;
   title: string;
   description: string;
   tags: [string];
-  img: string;
+  photoUrl: string;
 }

@@ -20,7 +20,7 @@
               <mat-card-content>
                 {{publication.description}}
               </mat-card-content>
-              <div class="self-center justify-self-end"><img width="250" height="250" [src]="publication.img" ></div>
+              <div class="self-center justify-self-end"><img width="250" height="250" [src]="publication.photoUrl" alt="" ></div>
             </div>
           </mat-card>
         </div>
@@ -28,18 +28,17 @@
 
       <mat-grid-tile  [colspan]="2" [rowspan]="20" >
         <div class="h-full w-full" >
-          <ng-container *ngFor="let psychology of psychologist">
-            <mat-card class="example-card mb-10 ml-10 mr-10 m-10 justify-item-center"
-                      *ngIf="psychology.new!">
+          <ng-container *ngFor="let psychologist of psychologist">
+            <mat-card class="example-card mb-10 ml-10 mr-10 m-10 justify-item-center" *ngIf="psychologist">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title> {{psychology.name}} </mat-card-title>
-                <mat-card-subtitle>{{psychology.email}}</mat-card-subtitle>
+                <mat-card-title> {{psychologist.name}} </mat-card-title>
+                <mat-card-subtitle>{{psychologist.email}}</mat-card-subtitle>
               </mat-card-header>
-              <img height="150" max-width="100" [src]="psychology.img" alt="">
+              <img height="150" max-width="100" [src]="psychologist.image" alt="">
               <mat-card-content>
                 <p>
-                  {{ psychology.about }}
+                  {{ psychologist.about }}
                 </p>
               </mat-card-content>
               <mat-card-actions>

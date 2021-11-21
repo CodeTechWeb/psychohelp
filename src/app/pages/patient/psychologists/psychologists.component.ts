@@ -3,6 +3,7 @@ import { PsychologistService } from "../../../services/psychologist.service";
 import {Psychologist} from "../../../types/psychologist";
 import {MatDialog} from "@angular/material/dialog";
 import {PsychologistDialogComponent} from "../../../components/psychologist-dialog/psychologist-dialog.component"
+import Response from "../../../types/response";
 
 @Component({
   selector: 'app-psychologists',
@@ -13,8 +14,8 @@ export class PsychologistsComponent implements OnInit{
   // dataSource: MatTableDataSource<any>;
   //
   // @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
-  psychologists: Psychologist[]=[];
-  filterGenre: Psychologist[]=[];
+  psychologists: Psychologist[];
+  filterGenre: Psychologist[];
   searchKey:string="";
   genreSelected: string="";
   typeSessionSelected:string="";
@@ -34,10 +35,9 @@ export class PsychologistsComponent implements OnInit{
   }
 
   getAllPsychologists() {
-    this.psychologistService.getPsychologists().subscribe((response :any) => {
-      // this.dataSource.data = res;
-      this.psychologists = response;
-      this.filterGenre = response;
+    this.psychologistService.getAllPsychologists().subscribe((response: Response<Psychologist[]>) => {
+      this.psychologists = response.content;
+      this.filterGenre = response.content;
     })
   }
 
