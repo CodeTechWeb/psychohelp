@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   socketUrl: 'http://localhost:3000',
   apiUrl: 'http://localhost:8080/api/v1',
-  peer: { host: 'localhost', port: 3001}
+  peer: { host: 'localhost', port: 3001 },
+  stripeKey: ''
 };
 
 /*

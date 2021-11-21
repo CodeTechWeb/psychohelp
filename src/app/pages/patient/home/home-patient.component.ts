@@ -34,10 +34,7 @@ export class HomePatientComponent implements OnInit {
 
     this.psychologistsService.getAllPsychologists()
       .pipe(
-        tap((response: Response<Psychologist[]>) => {
-          console.log(response)
-          this.psychologists = response.content
-        })
+        tap((response: Response<Psychologist[]>) => this.psychologists = response.content)
       )
       .subscribe();
   }
