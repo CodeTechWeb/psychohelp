@@ -35,7 +35,7 @@ export class PatientsService {
     return throwError('Something happened with request, please try again later');
   }
 
-  create(patient: Patients) {
+  create(patient: Patients):Observable<any> {
     return this.http.post(this.apiURL, JSON.stringify(patient), this.httpOptions)
       .pipe(
         retry(2),
@@ -50,7 +50,7 @@ export class PatientsService {
   }
 
   getEmail(email: string): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/patients?email=${email}`, this.httpOptions)
+    return this.http.get(`${this.apiURL}/email/${email}`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
