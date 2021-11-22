@@ -21,6 +21,11 @@ export class PsychologistService {
       .pipe(retry(2), catchError(this.handleError))
   }
 
+  getById(id: number): Observable<Response<Psychologist>> {
+    return this.http.get<Response<Psychologist>>(`${environment.apiUrl}/psychologists/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError))
+  }
+
   getPsychologist(psychologistId: string): Observable<Psychologist> {
     return this.http.get<Psychologist>(`${environment.apiUrl}/psychologists/${psychologistId}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))

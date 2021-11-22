@@ -1,0 +1,44 @@
+<div *ngIf="receivedAppointment">
+  <div class="grid">
+    <form class="grid" [formGroup]="form">
+      <mat-form-field class="width">
+        <mat-label>Motive</mat-label>
+        <input matInput autocomplete="off" [ngModel]="receivedAppointment.motive" formControlName="motive">
+      </mat-form-field>
+      <mat-form-field class="width">
+        <mat-label>Personal History</mat-label>
+        <input matInput autocomplete="off" [ngModel]="receivedAppointment.personalHistory" formControlName="personalHistory">
+      </mat-form-field>
+      <mat-form-field class="width">
+        <mat-label>Test Realized</mat-label>
+        <input matInput label="testRealized" autocomplete="off" [ngModel]="receivedAppointment.testRealized" formControlName="testRealized">
+      </mat-form-field>
+      <mat-form-field class="width">
+        <mat-label>Treatment</mat-label>
+        <input matInput autocomplete="off" [ngModel]="receivedAppointment.treatment" formControlName="treatment">
+      </mat-form-field>
+      <div class="flex justify-end">
+        <mat-card-actions>
+          <button mat-raised-button (click)="saveAppointment()">Save</button>
+          <button mat-raised-button (click)="closeDialog()">Close</button>
+        </mat-card-actions>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .parent {
+    margin: auto;
+    display: flex;
+    height: 100px;
+    width: 100px;
+  }
+
+  .child {
+    margin: auto;  /* Magic! */
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+  }
+</style>

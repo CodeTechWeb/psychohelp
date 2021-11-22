@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {HomePsychologistComponent} from "./home/home-psychologist.component";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {ComponentsModule} from "../../components/components.module";
@@ -19,6 +19,8 @@ import { MatSelectModule } from "@angular/material/select";
 import { LogbookComponent } from "./logbook/logbook.component";
 import { PatientsComponent } from "./patients/patients.component";
 import {MatTableModule} from "@angular/material/table";
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { ListPatientsComponent } from './list-patients/list-patients.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {MatTableModule} from "@angular/material/table";
     RegisterComponent,
     LoginComponent,
     LogbookComponent,
-    PatientsComponent
+    PatientsComponent,
+    AppointmentsComponent,
+    ListPatientsComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,23 @@
+<app-layout domain="psychologist">
+  <div style=";width: 100%">
+    <div class="ma-2 mb-4 mr-10 ml-10 font-weight-medium" style="font-size:1.5rem">Tus Pacientes</div>
+    <mat-card class="mr-10 ml-10">
+      <div class="flex align-middle justify-center" >
+        <div class="d-flex flex-wrap">
+          <mat-card class="mx-auto mb-10 pb-3 justify-center" *ngFor="let patient of patients">
+            <div class="grid align-middle">
+              <img mat-card-image class="child" [src]="patient.img" alt="">
+            </div>
+            <h3 class="justify-center ml-8 font-weight-bold text-lg-body-1">{{ patient.firstName }} {{ patient.lastName }}</h3>
+            <h4 class="text-center" style="font-size:1rem">{{ patient.date }}
+            </h4>
+            <h4 class="text-center" style="color: black">{{ patient.email }}</h4>
+            <mat-card-actions>
+              <button mat-raised-button  (click)="redirectTo(psychologistId, patient.id)" class="light-blue--text" text>LogBook</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</app-layout>

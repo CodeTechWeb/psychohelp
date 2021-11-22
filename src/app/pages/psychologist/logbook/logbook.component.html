@@ -1,22 +1,22 @@
 <app-layout domain="psychologist">
   <div class="w-full h-full flex justify-center items-center">
-    <div class="bg-red-100 p-10 rounded-xl">
+    <mat-card style="background-color: #03A9F4">
       <div class="flex">
         <div class="mr-5">
-          <div class="bg-red-200 rounded-xl px-1">
+          <div class="text-white rounded-xl px-1">
             <mat-card-title>Patient #{{patientId}}</mat-card-title>
           </div>
         </div>
-        <mat-card>
+        <mat-card class="w-full ml-5 mr-8">
           <mat-card-title>Identification Data</mat-card-title>
           <mat-card-content>
-            <div class="flex justify-between">
-              <div class="flex flex-col mr-5">
+            <div class="flex ">
+              <div class="grid">
                 <span><b>Full Name: </b> {{patient.firstName + ' ' + patient.lastName}}</span>
                 <span><b>Age: </b> 27</span>
                 <span><b>Date of birth: </b> {{patient.date}}</span>
               </div>
-              <div class="flex flex-col">
+              <div class="grid ml-28">
                 <span><b>Occupation: </b> Professional</span>
                 <span><b>Address: </b> Lima St. 245</span>
                 <span><b>Phone: </b> {{patient.phone}}</span>
@@ -25,21 +25,56 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <mat-card class="mt-5">
-        <div class="flex justify-around">
-          <div>
-            <h1>Session History</h1>
-            <div>
-              <div class="bg-red-100 rounded-xl px-5"> Session 1 - 21/05/25</div>
-              <div class="bg-red-100 rounded-xl px-5"> Session 1 - 21/05/25</div>
-              <div class="bg-red-100 rounded-xl px-5"> Session 1 - 21/05/25</div>
+      <div class="flex">
+        <div class="flex flex-cols-12">
+          <mat-card class="mr-8 mt-5" >
+            <div class="flex justify-around">
+              <div class="grid">
+                <h1 class="mb-5">Session History</h1>
+                <div *ngFor="let appointment of appointments" >
+                  <mat-card (click)="retrieveAppointmentInfo(appointment.id)" class="bg-red-100 mb-5 rounded-xl px-5">{{appointment.scheduleDate.slice(0,10)}}</mat-card>
+                </div>
+              </div>
+              <div class="grid ml-10">
+                <mat-card>
+                  <mat-card-title>{{scheduleDate}}</mat-card-title>
+                  <mat-card class="ml-5 mr-5 mb-8 mt-8">
+                    <div class="flex">
+                      <div class="grid ">
+                        <h4 class="ml-8 font-weight-regular">Reason for consultation :  {{motive}}</h4>
+                      </div>
+                    </div>
+                  </mat-card>
+                  <mat-card class="ml-5 mr-5 mb-8 mt-8">
+                    <div class="flex">
+                      <div class="gri">
+                        <h4 class="ml-8 font-weight-regular">Personal History : {{personalHistory}}</h4>
+                      </div>
+                    </div>
+                  </mat-card>
+                  <mat-card class="ml-5 mr-5 mb-8 mt-8">
+                    <div class="flex">
+                      <div class="grid grid-cols-3">
+                        <h4 class="ml-8 font-weight-regular">Test Performed :{{testRealized}}</h4>
+                      </div>
+                    </div>
+                  </mat-card>
+                  <mat-card class="ml-5 mr-5 mb-8 mt-8">
+                    <div class="flex">
+                      <div class="grid grid-cols-3">
+                        <h4 class="ml-8 font-weight-regular">Treatment :  {{treatment}}</h4>
+                      </div>
+                    </div>
+                  </mat-card>
+                  <div class="flex justify-end" >
+                    <button mat-raised-button (click)="openAppointmentDialog()">Edit</button>
+                  </div>
+                </mat-card>
+              </div>
             </div>
-          </div>
-          <mat-card>
-            <mat-card-title>Session 1 - 21/05/25</mat-card-title>
           </mat-card>
         </div>
-      </mat-card>
-    </div>
+      </div>
+    </mat-card>
   </div>
 </app-layout>

@@ -10,11 +10,11 @@ import {Patients} from "../../../types/patients";
 })
 export class PatientProfileComponent implements OnInit {
 
-  patientId: string;
+  patientId: number;
   patient!: Patients;
 
   constructor(private route: ActivatedRoute ,private patientService: PatientsService) {
-    this.patientId = route.snapshot.paramMap.get('id') || '';
+    this.patientId = route.snapshot.params['id'] ;
   }
 
   ngOnInit(): void {

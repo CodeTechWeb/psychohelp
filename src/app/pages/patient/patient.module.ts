@@ -25,6 +25,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { ScheduleComponent } from './psychologists/schedule/schedule.component';
+import { AppointmentPatientComponent } from './appointment-patient/appointment-patient.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ScheduleComponent } from './psychologists/schedule/schedule.component';
     PsychologistsComponent,
     PatientProfileComponent,
     HomePatientComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    AppointmentPatientComponent
   ],
 
   imports: [

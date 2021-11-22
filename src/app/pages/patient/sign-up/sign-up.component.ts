@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
       phone: this.form.value.phone,
       date: this.form.value.date,
       gender: this.form.value.gender,
-      image: this.form.value.image
+      img: this.form.value.image
     }
 
     this._patientsService.create(patient)

@@ -11,7 +11,7 @@ interface Option {
   styleUrls: ['layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-  @Input() domain: string | null;
+  @Input() domain!: string | null;
 
   options : Array<Option>= [
     { name: "Home", route: "", icon: "home" },

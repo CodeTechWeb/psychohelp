@@ -4,7 +4,7 @@
       <mat-grid-tile>
         <div>
           <mat-card class="imagesize">
-            <img mat-card-image [src]="patient.image" alt="{{patient.image}}" class="max-w-none">
+            <img mat-card-image [src]="patient.img" alt="{{patient.img}}" class="max-w-none">
           </mat-card>
           <div class="mt-3">
             <mat-card style="text-align: center;">
@@ -47,7 +47,7 @@
 
                 <mat-form-field class="text-full-width" appearance="fill">
                   <mat-label>Image</mat-label>
-                  <input matInput placeholder="Image" value="{{patient.image}}"  [(ngModel)]="patient.image">
+                  <input matInput placeholder="Image" value="{{patient.img}}"  [(ngModel)]="patient.img">
                 </mat-form-field>
             </mat-card-content>
             <mat-card-actions style="text-align: center;">

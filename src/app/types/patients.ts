@@ -8,6 +8,6 @@ export interface Patients {
   phone: number;
   gender: string;
   state: string;
-  image: string;
+  img: string;
 
 }
