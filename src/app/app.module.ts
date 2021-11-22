@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from "./components/layout/layout.module";
 import { ComponentsModule } from "./components/components.module";
 import { PagesModule } from "./pages/pages.module";
-import { NgxStripeModule } from "ngx-stripe";
-import { environment } from "../environments/environment";
 
 
 @NgModule({
@@ -24,7 +22,6 @@ import { environment } from "../environments/environment";
     LayoutModule,
     ComponentsModule,
     PagesModule,
-    NgxStripeModule.forRoot(environment.stripeKey)
   ],
   providers: [],
   bootstrap: [AppComponent]

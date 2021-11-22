@@ -8,7 +8,7 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './logbook.component.html'
 })
 export class LogbookComponent implements OnInit {
-  patient: Patients;
+  patient!: Patients;
   patientId: string;
 
   constructor(private patientsService: PatientsService, private route: ActivatedRoute) {
