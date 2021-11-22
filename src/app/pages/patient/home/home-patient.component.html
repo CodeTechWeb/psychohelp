@@ -42,14 +42,13 @@
             </mat-card-content>
           </mat-card-subtitle>
           <mat-card-actions align="end">
-            <button mat-raised-button color="primary">Read Full Note</button>
-            <button mat-stroked-button color="accent">Share</button>
+            <a mat-raised-button color="primary" href="/publications/{{publication.id}}">
+              Read Full Note
+            </a>
           </mat-card-actions>
         </div>
       </mat-card>
-
     </div>
-
 
     <div class="hidden xl:flex flex-col justify-start lg:w-1/5 h-full p-4 pr-5">
       <mat-card>

@@ -1,10 +1,10 @@
 import { HomePsychologistComponent } from "../pages/psychologist/home/home-psychologist.component";
 import { RegisterComponent } from "../pages/psychologist/register/register.component";
 import { LoginComponent } from "../pages/psychologist/login/login.component";
-import {LogbookComponent} from "../pages/psychologist/logbook/logbook.component";
-import {PatientsComponent} from "../pages/psychologist/patients/patients.component";
-import {AppointmentsComponent} from "../pages/psychologist/appointments/appointments.component";
-import {ListPatientsComponent} from "../pages/psychologist/list-patients/list-patients.component";
+import { LogbookComponent } from "../pages/psychologist/logbook/logbook.component";
+import { PatientsComponent } from "../pages/psychologist/patients/patients.component";
+import { AppointmentsComponent } from "../pages/psychologist/appointments/appointments.component";
+import { ListPatientsComponent } from "../pages/psychologist/list-patients/list-patients.component";
 
 export default [
   { path: 'psychologist/home/:id', component: HomePsychologistComponent },

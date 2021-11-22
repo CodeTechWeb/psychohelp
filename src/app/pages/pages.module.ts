@@ -10,13 +10,15 @@ import { PsychologistModule } from "./psychologist/psychologist.module";
 import { SocketIoConfig, SocketIoModule } from "ngx-socket-io";
 
 import { environment} from "../../environments/environment";
+import { HomeComponent } from './common/home/home.component';
 //@ts-ignore
 const config: SocketIoConfig = { url: environment.socketUrl, options: {withCredentials: '*'} };
 
 @NgModule({
   declarations: [
     PageNotFoundComponent,
-    RoomComponent
+    RoomComponent,
+    HomeComponent,
   ],
   exports: [],
   imports: [
