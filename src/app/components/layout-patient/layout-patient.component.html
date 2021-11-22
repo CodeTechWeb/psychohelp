@@ -1,0 +1,22 @@
+<mat-drawer-container class="example-container w-full h-full">
+  <mat-toolbar [color]="!domain ? 'primary' : 'accent'" class="w-screen">
+    <button type="button" (click)="drawer.toggle()"
+            mat-icon-button aria-label="icon button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>PsychoHelp</span>
+  </mat-toolbar>
+  <mat-drawer #drawer class="example-sidenav w-60" mode="over">
+    <div class="w-full">
+      <mat-nav-list>
+        <button type="submit" class="btn btn-success" (click)="profile()">
+          <mat-icon>person</mat-icon>
+          Profile
+        </button>
+      </mat-nav-list>
+    </div>
+  </mat-drawer>
+  <section id="content">
+    <ng-content></ng-content>
+  </section>
+</mat-drawer-container>

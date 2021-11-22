@@ -7,13 +7,21 @@
     <span>PsychoHelp</span>
   </mat-toolbar>
   <mat-drawer #drawer class="example-sidenav w-60" mode="over">
-    <div class="w-full">
-      <mat-nav-list>
-        <a mat-list-item [href]="option.route" g *ngFor="let option of options">
-          <mat-icon>{{ option.icon }}</mat-icon>
-          {{ option.name }}
-        </a>
-      </mat-nav-list>
+    <div class="w-full flex justify-start">
+      <mat-list>
+        <mat-list-item>
+          <button type="submit" class="btn btn-success" (click)="profile()">
+            <mat-icon>person</mat-icon>
+            Profile
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button type="submit" class="btn btn-success" (click)="psychoList()">
+            <mat-icon>event</mat-icon>
+            Psychologists
+          </button>
+        </mat-list-item>
+      </mat-list>
     </div>
   </mat-drawer>
   <section id="content">

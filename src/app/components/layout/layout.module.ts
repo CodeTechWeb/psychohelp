@@ -7,6 +7,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import {MatListModule} from '@angular/material/list';
 import {RouterModule} from "@angular/router";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatListModule,
     RouterModule,
     BrowserAnimationsModule,
+    MatButtonToggleModule,
   ]
 })
 export class LayoutModule { }

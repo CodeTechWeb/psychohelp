@@ -17,6 +17,11 @@ import {CarouselComponent} from "./carousel/carousel.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { PsychologistDialogComponent } from './psychologist-dialog/psychologist-dialog.component';
+import { LayoutPatientComponent } from './layout-patient/layout-patient.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import { ScheduleDialogComponent } from './schedule-dialog/schedule-dialog.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 
 
@@ -26,26 +31,31 @@ import { PsychologistDialogComponent } from './psychologist-dialog/psychologist-
     VideoPlayerComponent,
     DialogComponent,
     CarouselComponent,
-    PsychologistDialogComponent
+    PsychologistDialogComponent,
+    LayoutPatientComponent,
+    ScheduleDialogComponent
   ],
   exports: [
     VideoPlayerComponent,
     CarouselComponent,
     BottomMenuComponent
   ],
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-    LayoutModule,
-    CommonModule,
-    MatDialogModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    RouterModule
-  ]
+    imports: [
+        MatButtonModule,
+        MatIconModule,
+        LayoutModule,
+        CommonModule,
+        MatDialogModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        RouterModule,
+        MatSidenavModule,
+        MatListModule,
+        MatButtonToggleModule
+    ]
 })
 export class ComponentsModule { }
