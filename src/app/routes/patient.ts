@@ -10,6 +10,6 @@ export default [
   { path: 'psychologists/list/:id', component: PsychologistsComponent },
   { path: 'psychologists/:id/schedule', component: ScheduleComponent },
   { path: 'login', component: SignInComponent },
-  { path: 'patient/:id/appointments', component: AppointmentsComponent },
+  { path: 'patient/appointments/:id', component: AppointmentsComponent },
   { path: 'register', component: SignUpComponent }
 ]

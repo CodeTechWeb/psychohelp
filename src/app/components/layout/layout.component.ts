@@ -25,4 +25,8 @@ export class LayoutComponent implements OnInit {
   psychoList() {
     this.router.navigate(['psychologists/list', this.patient_id])
   }
+
+  appointment() {
+    this.router.navigate(['patient/appointments', this.patient_id])
+  }
 }
