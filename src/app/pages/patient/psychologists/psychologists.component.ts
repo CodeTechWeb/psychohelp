@@ -14,8 +14,8 @@ export class PsychologistsComponent implements OnInit{
   // dataSource: MatTableDataSource<any>;
   //
   // @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
-  psychologists: Psychologist[];
-  filterGenre: Psychologist[];
+  psychologists!: Psychologist[];
+  filterGenre!: Psychologist[];
   searchKey:string="";
   genreSelected: string="";
   typeSessionSelected:string="";

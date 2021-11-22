@@ -9,8 +9,8 @@ import { Psychologist } from "../../../../types/psychologist";
 })
 export class ScheduleComponent implements OnInit {
   psychologistId: string;
-  selected: Date | null;
-  psychologist: Psychologist;
+  selected!: Date | null;
+  psychologist!: Psychologist;
 
   constructor(private route: ActivatedRoute, private psychologistService: PsychologistService) {
     this.psychologistId = route.snapshot.paramMap.get('id') || '';
