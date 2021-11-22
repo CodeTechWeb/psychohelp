@@ -21,7 +21,12 @@ export class HomePsychologistComponent implements OnInit {
   publications!: Publication[];
   psychologist!: Psychologist[];
   show!: boolean;
-  constructor(public dialog: MatDialog, private publicationsSvc: PublicationsService, private psychologistsSvc: PsychologistService) { }
+
+  constructor(
+    public dialog: MatDialog,
+    private publicationsSvc: PublicationsService,
+    private psychologistsSvc: PsychologistService
+  ) { }
 
   ngOnInit(): void {
     this.publicationsSvc.getAllPublications()
@@ -29,11 +34,15 @@ export class HomePsychologistComponent implements OnInit {
         tap( (response: Response<Publication[]>) => this.publications = response.content))
       .subscribe();
 
+    this.getPsychologist();
+  }
+
+  getPsychologist(): void{
     this.psychologistsSvc.getAllPsychologists()
-      .pipe(
-        tap((response: Response<Psychologist[]>) => this.psychologist = response.content)
-      )
-      .subscribe();
+      .subscribe((data: any) => {
+        this.psychologist = data;
+        console.log(this.psychologist);
+      })
   }
 
   openDialog(): void {

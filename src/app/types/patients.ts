@@ -2,7 +2,7 @@ export interface Patients {
   id: number;
   firstName: string;
   lastName: string;
-  date: Date;
+  date: string;
   email: string;
   password: string;
   phone: number;

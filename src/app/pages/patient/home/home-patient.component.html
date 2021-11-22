@@ -1,44 +1,91 @@
 <app-layout>
-  <div class="flex w-full h-full justify-between items-center bg-gray-100">
+  <div class="flex w-full h-full">
+    <div class="grid-rows-3 grid-cols-1">
+      <img class="ml-4 mr-4 mt-4 mb-4 round" width="250" height="250"
+           src="https://medii.care/wp-content/uploads/sites/41/2020/08/dra-lytza-alvarez-perfil-01.png"
+           alt="psychologist">
+      <div class="ml-4 mr-4 mt-4 mb-4">
+        <mat-card class="mt-4 mb-4 mat-elevation-z5" style="border-radius: 25%">
+          <mat-card-title class="text-2xl">Welcome: Prueba Cuentas</mat-card-title>
+        </mat-card>
+      </div>
+      <div class="ml-4 mr-4 mt-4 mb-4">
+        <mat-card class="mx-4 mat-elevation-z5" style="border-radius: 20%">
+          <button mat-button>Patients</button>
+          <mat-divider></mat-divider>
+          <button mat-button>Help Center</button>
+          <mat-divider></mat-divider>
+          <button mat-button>Guide</button>
+          <mat-divider></mat-divider>
+        </mat-card>
+      </div>
+    </div>
+
     <div class="w-full h-full xl:w-5/6">
       <div class="hidden md:block p-4 ">
         <app-carousel [items]="carouselData"></app-carousel>
       </div>
-      <div class="publications flex flex-wrap justify-center items-start overflow-y-scroll p-2">
-        <mat-card
-          class="max-w-full md:max-w-sm lg:max-w-sm xl:max-w-xs m-5"
-          *ngFor="let publication of publications"
-        >
-          <img
-            mat-card-image
-            class='max-w-none'
-            [src]="publication.photoUrl"
-            alt="{{ publication.title }}"
-          >
-          <mat-card-header>
-            <mat-card-title>{{ publication.title }}</mat-card-title>
-            <mat-card-subtitle>{{ publication.tags }}</mat-card-subtitle>
-          </mat-card-header>
+
+      <mat-card class="mx-4 my-4" *ngFor="let publication of publications">
+        <div>
+          <img mat-card-image
+               style="max-width: 400px"
+               class="px-7 py-7"
+               [src]="publication.photoUrl">
+        </div>
+        <div style="">
+          <mat-card-title>
+            {{ publication.title }}
+          </mat-card-title>
+          <mat-card-subtitle>
+            <mat-icon aria-hidden="false">edit</mat-icon>
+            <mat-card-content class="text-h6 font-weight-regular pt-3 text--secondary">
+              {{publication.description }}
+            </mat-card-content>
+          </mat-card-subtitle>
           <mat-card-actions align="end">
             <button mat-raised-button color="primary">Read Full Note</button>
             <button mat-stroked-button color="accent">Share</button>
           </mat-card-actions>
-        </mat-card>
-      </div>
+        </div>
+      </mat-card>
+
     </div>
-    <div class="hidden xl:flex flex-col justify-start lg:w-1/6 h-full p-2 pr-5">
-      <h1 class="text-2xl">Popular Psychologists</h1>
-      <div class="overflow-y-scroll">
-        <mat-card *ngFor="let psychologist of psychologists" class="my-2">
-          <mat-card-header>
-            <div mat-card-avatar class="bg-cover">
-              <img [src]="psychologist.image" alt="{{psychologist.name}}" class="bg-cover">
-            </div>
-            <mat-card-title>{{ psychologist.name }}</mat-card-title>
-            <mat-card-subtitle>{{ psychologist.email }}</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
+
+
+    <div class="hidden xl:flex flex-col justify-start lg:w-1/5 h-full p-4 pr-5">
+      <mat-card>
+        <mat-card-title class="text-2xl text-center">
+          NEW PSYCHOLOGISTS
+        </mat-card-title>
+      </mat-card>
+      <div>
+        <ng-container *ngFor="let psychologist of psychologists">
+          <mat-card class="example-card mb-10 ml-10 mr-10 m-10 justify-item-center" *ngIf="psychologist">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title> {{psychologist.name}} </mat-card-title>
+              <mat-card-subtitle>{{psychologist.email}}</mat-card-subtitle>
+            </mat-card-header>
+            <img height="150" width="100" [src]="psychologist.image">
+            <mat-card-content>
+              <p>{{ psychologist.about }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon>
+              </button>
+              <button mat-button>Share</button>
+            </mat-card-actions>
+          </mat-card>
+        </ng-container>
       </div>
     </div>
   </div>
 </app-layout>
+
+<style>
+  .round {
+    border-radius: 40%;
+  }
+</style>

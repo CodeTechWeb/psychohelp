@@ -12,14 +12,16 @@ interface Option {
 })
 export class LayoutComponent implements OnInit {
   @Input() domain: string | null;
-  
+
   options : Array<Option>= [
     { name: "Home", route: "", icon: "home" },
     { name: 'Psychologists', route: 'psychologists', icon: 'psychology' },
-    { name: "Profile", route: "profile", icon: "person" },
+    { name: "Profile", route: "profile/:id", icon: "person" },
     { name: "Logout", route: "", icon: "logout" }
   ]
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
 }
