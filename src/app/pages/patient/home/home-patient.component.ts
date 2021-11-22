@@ -16,8 +16,8 @@ import Response from "../../../types/response";
 })
 export class HomePatientComponent implements OnInit {
   carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
-  publications: Publication[];
-  psychologists: Psychologist[];
+  publications!: Publication[];
+  psychologists!: Psychologist[];
   show!: boolean;
 
   constructor(
