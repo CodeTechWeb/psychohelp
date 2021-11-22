@@ -39,7 +39,7 @@ export class PsychologistsComponent implements OnInit{
   ngOnInit(): void {
     // this.dataSource.paginator = this.paginator;
     this.getAllPsychologists();
-    this.getById();
+    // this.getById();
     this.getPsychoSchedule()
     //this.filter('Masculino');
   }
@@ -51,11 +51,11 @@ export class PsychologistsComponent implements OnInit{
     })
   }
 
-  getById(){
-    this.patientService.getPatientById(this.patientId).subscribe((data: any) =>{
-      this.patients = data;
-    })
-  }
+  // getById(){
+  //   this.patientService.getPatientById(this.patientId).subscribe((data: any) =>{
+  //     this.patients = data;
+  //   })
+  // }
 
   getPsychoSchedule() {
     this.psychologistService.findPsychologistSchedule(this.psychologistId).subscribe((data: any) =>{
