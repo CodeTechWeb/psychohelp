@@ -42,8 +42,8 @@ export class PatientsService {
         catchError(this.handleError));
   }
 
-  getPatientById(id: any): Observable<Patients> {
-    return this.http.get<Patients>(`${this.apiURL}/${id}`, this.httpOptions)
+  getPatientById(patientId: string): Observable<Patients> {
+    return this.http.get<Patients>(`${this.apiURL}/${patientId}`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
@@ -71,8 +71,8 @@ export class PatientsService {
         catchError(this.handleError))
   }
 
-  update(id: any, item: any): Observable<Patients> {
-    return this.http.put<Patients>(`${this.apiURL}/${id}`, JSON.stringify(item), this.httpOptions)
+  update(id: any, patientProfile: Object): Observable<any> {
+    return this.http.put<Patients>(`${this.apiURL}/${id}`, patientProfile, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));

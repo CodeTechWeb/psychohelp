@@ -16,13 +16,13 @@ export class SignUpComponent implements OnInit {
               private route: Router) {
     this.form = this.fb.group({
       id: [''],
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
       state: ['', Validators.required],
       phone: ['', Validators.required],
-      birthdayDate: ['', Validators.required],
+      date: ['', Validators.required],
       gender: ['', Validators.required]
     })
   }
@@ -34,14 +34,15 @@ export class SignUpComponent implements OnInit {
 
     const patient: Patients ={
       id: this.form.value.id,
-      firstname: this.form.value.firstname,
-      lastname: this.form.value.lastname,
+      firstName: this.form.value.firstName,
+      lastName: this.form.value.lastName,
       email: this.form.value.email,
       password: this.form.value.password,
       state: this.form.value.state,
       phone: this.form.value.phone,
-      birthdayDate: this.form.value.birthdayDate,
-      gender: this.form.value.gender
+      date: this.form.value.date,
+      gender: this.form.value.gender,
+      image: this.form.value.image
     }
 
     this._patientsService.create(patient)

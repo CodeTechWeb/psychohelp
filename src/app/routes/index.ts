@@ -11,7 +11,7 @@ const index: Routes = [
   ...patientRoutes,
   ...psychologistRoutes,
   { path: 'psychologist/profile', component: PsychologistProfileComponent },
-  { path: 'profile', component: PatientProfileComponent },
+  { path: 'profile/:id', component: PatientProfileComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
