@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {PsychologistService} from "../../../services/psychologist.service";
 import {Psychologist} from "../../../types/psychologist";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import psychologist from "../../../routes/psychologist";
 
 
 @Component({

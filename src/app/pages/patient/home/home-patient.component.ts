@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { tap } from "rxjs/operators";
 import { Publication } from "../../../types/publication";
 import { Psychologist } from "../../../types/psychologist";
 import { ICarouselItem } from "../../../components/carousel/Icarousel-item.metadata";
 import { CAROUSEL_DATA_ITEMS } from "../../../components/carousel/carousel.const";
 import { PsychologistService } from "../../../services/psychologist.service";
 import { PublicationsService } from "../../../services/publications.service";
-import Response from "../../../types/response";
-import {ActivatedRoute} from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-home-patient',
@@ -39,7 +37,6 @@ export class HomePatientComponent implements OnInit {
         this.publications = data;
         console.log(this.publications);
       })
-
     this.getPsychologist();
   }
 
