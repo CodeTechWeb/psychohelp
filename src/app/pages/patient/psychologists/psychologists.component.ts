@@ -3,12 +3,10 @@ import { PsychologistService } from "../../../services/psychologist.service";
 import {Psychologist} from "../../../types/psychologist";
 import {MatDialog} from "@angular/material/dialog";
 import {PsychologistDialogComponent} from "../../../components/psychologist-dialog/psychologist-dialog.component"
-import Response from "../../../types/response";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Patients} from "../../../types/patients";
 import {PatientsService} from "../../../services/patients.service";
 import {ScheduleDialogComponent} from "../../../components/schedule-dialog/schedule-dialog.component";
-import {data} from "autoprefixer";
 
 @Component({
   selector: 'app-psychologists',
@@ -25,13 +23,13 @@ export class PsychologistsComponent implements OnInit{
   searchKey:string="";
   genreSelected: string="";
   typeSessionSelected:string="";
-  patientId!: string;
+  patientId!: number;
   psychologistId!: string;
   genres: string[]= ['Femenino', 'Masculino'];
   typeSessions: string[]= ['Individual', 'Pareja'];
 
   constructor(private psychologistService: PsychologistService, private dialog: MatDialog, private route: ActivatedRoute, private router: Router, private patientService: PatientsService) {
-    this.patientId = route.snapshot.paramMap.get('id') || '';
+    this.patientId = route.snapshot.params['id'];
     // this.dataSource = new MatTableDataSource<any>();
   }
 
@@ -39,7 +37,7 @@ export class PsychologistsComponent implements OnInit{
   ngOnInit(): void {
     // this.dataSource.paginator = this.paginator;
     this.getAllPsychologists();
-    // this.getById();
+    this.getById();
     this.getPsychoSchedule()
     //this.filter('Masculino');
   }
@@ -51,11 +49,11 @@ export class PsychologistsComponent implements OnInit{
     })
   }
 
-  // getById(){
-  //   this.patientService.getPatientById(this.patientId).subscribe((data: any) =>{
-  //     this.patients = data;
-  //   })
-  // }
+  getById(){
+    this.patientService.getPatientById(this.patientId).subscribe((data: any) =>{
+      this.patients = data;
+    })
+  }
 
   getPsychoSchedule() {
     this.psychologistService.findPsychologistSchedule(this.psychologistId).subscribe((data: any) =>{
