@@ -20,6 +20,11 @@ import { PsychologistDialogComponent } from './psychologist-dialog/psychologist-
 import { AppointmentSelectedComponent } from './appointment-selected/appointment-selected.component';
 import { DetailsDialogComponent } from './details-dialog/details-dialog.component';
 import { DialogPatientComponent } from './dialog-patient/dialog-patient.component';
+import { LayoutPatientComponent } from './layout-patient/layout-patient.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import { ScheduleDialogComponent } from './schedule-dialog/schedule-dialog.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 
 @NgModule({
@@ -32,27 +37,31 @@ import { DialogPatientComponent } from './dialog-patient/dialog-patient.componen
     editLogbookComponent,
     AppointmentSelectedComponent,
     DetailsDialogComponent,
-    DialogPatientComponent
+    DialogPatientComponent,
+    LayoutPatientComponent,
+    ScheduleDialogComponent
   ],
   exports: [
     VideoPlayerComponent,
     CarouselComponent,
     BottomMenuComponent
   ],
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-    LayoutModule,
-    CommonModule,
-    MatDialogModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    RouterModule,
-    FormsModule
-  ]
+    imports: [
+        MatButtonModule,
+        MatIconModule,
+        LayoutModule,
+        CommonModule,
+        MatDialogModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        RouterModule,
+        MatSidenavModule,
+        MatListModule,
+        MatButtonToggleModule
+    ]
 })
 export class ComponentsModule { }

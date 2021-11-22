@@ -7,7 +7,5 @@ export interface Patients {
   password: string;
   phone: number;
   gender: string;
-  state: string;
   img: string;
-
 }

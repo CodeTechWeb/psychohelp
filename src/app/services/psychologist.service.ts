@@ -16,6 +16,7 @@ export class PsychologistService {
     })
   }
   constructor(private http: HttpClient) { }
+
   getAllPsychologists(): Observable<Response<Psychologist[]>> {
     return this.http.get<Response<Psychologist[]>>(`${environment.apiUrl}/psychologists`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
@@ -44,6 +45,14 @@ export class PsychologistService {
       .pipe(
         retry(2),
         catchError(this.handleError));
+  }
+
+  findPsychologistSchedule(psychoId: string): Observable<any>{
+    return this.http.get(`${environment.apiUrl}/psychologists/${psychoId}/schedules`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
   }
 
   login(email:string):Observable<any> {

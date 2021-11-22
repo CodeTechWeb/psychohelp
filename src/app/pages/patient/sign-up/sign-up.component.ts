@@ -20,10 +20,10 @@ export class SignUpComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      state: ['', Validators.required],
       phone: ['', Validators.required],
       date: ['', Validators.required],
-      gender: ['', Validators.required]
+      gender: ['', Validators.required],
+      img: ['', Validators.required]
     })
   }
 
@@ -38,17 +38,16 @@ export class SignUpComponent implements OnInit {
       lastName: this.form.value.lastName,
       email: this.form.value.email,
       password: this.form.value.password,
-      state: this.form.value.state,
       phone: this.form.value.phone,
       date: this.form.value.date,
       gender: this.form.value.gender,
-      img: this.form.value.image
+      img: this.form.value.img
     }
 
     this._patientsService.create(patient)
       .subscribe(res =>{
         this.form.reset();
-        this.route.navigate(['/sign-in'])
+        this.route.navigate(['/login'])
       },
         er => console.log(er),
         ()=>console.log('Terminado'),

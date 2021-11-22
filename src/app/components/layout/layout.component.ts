@@ -1,10 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
-interface Option {
-  name: string,
-  route: string,
-  icon: string
-}
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -13,15 +9,20 @@ interface Option {
 export class LayoutComponent implements OnInit {
   @Input() domain!: string | null;
 
-  options : Array<Option>= [
-    { name: "Home", route: "", icon: "home" },
-    { name: 'Psychologists', route: 'psychologists', icon: 'psychology' },
-    { name: "Profile", route: "profile/:id", icon: "person" },
-    { name: "Logout", route: "", icon: "logout" }
-  ]
-  constructor() { }
+  patient_id: number = 0;
+  userType: string = "psychologist"
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.patient_id = this.route.snapshot.params['id'];
   }
 
+  profile() {
+    this.router.navigate(['profile', this.patient_id])
+  }
+
+  psychoList() {
+    this.router.navigate(['psychologists/list', this.patient_id])
+  }
 }

@@ -6,8 +6,8 @@ import {ScheduleComponent} from "../pages/patient/psychologists/schedule/schedul
 import {AppointmentsComponent} from "../pages/psychologist/appointments/appointments.component";
 
 export default [
-  { path: '', component: HomePatientComponent },
-  { path: 'psychologists', component: PsychologistsComponent },
+  { path: 'home-patient/:id', component: HomePatientComponent },
+  { path: 'psychologists/list/:id', component: PsychologistsComponent },
   { path: 'psychologists/:id/schedule', component: ScheduleComponent },
   { path: 'login', component: SignInComponent },
   { path: 'patient/:id/appointments', component: AppointmentsComponent },
