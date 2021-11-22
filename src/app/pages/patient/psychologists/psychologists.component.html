@@ -5,6 +5,8 @@
         <div class="content">
           <div fxLayout="row wrap">
             <mat-card class="mat-elevation-z4">
+              <mat-card-title>Elige un psicólogo usuario:</mat-card-title>
+              <mat-card-title>{{patients.lastName + ' ' + patients.firstName}}</mat-card-title>
               <mat-card-title>Filtros</mat-card-title>
               <mat-card-subtitle>Género</mat-card-subtitle>
               <mat-card-actions>
@@ -39,9 +41,7 @@
                 <mat-card-content class="line-clamp text-justify">{{psychologist.about}}</mat-card-content>
                 <mat-card-actions style="text-align: end;">
                   <button mat-button (click)="openPsychologistDialog(psychologist)">Profile</button>
-                  <a mat-raised-button color="accent" href="psychologists/{{ psychologist.id }}/schedule">
-                    AGENDAR CITA
-                  </a>
+                  <button mat-button (click)="openScheduleDialog(psychologist, patients)">AGENDAR CITA</button>
                 </mat-card-actions>
               </mat-card>
             </div>
