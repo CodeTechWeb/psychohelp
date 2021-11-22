@@ -25,6 +25,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import { ScheduleDialogComponent } from './schedule-dialog/schedule-dialog.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
+
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     DetailsDialogComponent,
     DialogPatientComponent,
     LayoutPatientComponent,
-    ScheduleDialogComponent
+    ScheduleDialogComponent,
+    DialogEditComponent
   ],
   exports: [
     VideoPlayerComponent,

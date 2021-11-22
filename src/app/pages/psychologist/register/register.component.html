@@ -6,7 +6,7 @@
     <div class="col-span-12 md:col-span-7">
       <div class="ml-4 mt-8 flex">
         <h1 class="sm:text-2xl text-lg">¡Regístrate en PsychoHelp!</h1>
-        <button routerLink="/login" class=" text-blue-500 text-lg sm:text-xl md:text-xl lg:text-xl mr-4  ml-auto lg:mr-12"
+        <button routerLink="psychologist/login" class=" text-blue-500 text-lg sm:text-xl md:text-xl lg:text-xl mr-4  ml-auto lg:mr-12"
                 plain> Already registered? Sign in!</button>
       </div>
       <mat-card class="mt-8 ml-4 mr-4 lg:mr-12 lg:w-auto sm:w-auto sm:ml:12">
@@ -24,9 +24,22 @@
           </mat-form-field>
 
           <mat-form-field class="w-full" appearance="fill">
+            <mat-label>DNI</mat-label>
+            <input matInput placeholder="dni" formControlName="dni" >
+            <mat-error *ngIf="phoneField?.invalid">{{phoneError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
             <mat-label>Phone</mat-label>
             <input matInput placeholder="phone" formControlName="phone" >
             <mat-error *ngIf="phoneField?.invalid">{{phoneError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Birthday Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthdayDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
           <mat-form-field class="w-full" appearance="fill">
@@ -40,6 +53,15 @@
           </mat-form-field>
 
           <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Session Type</mat-label>
+            <mat-select [disabled]="disableSelect.value" placeholder="sessionType"  formControlName="sessionType">
+              <mat-option value="Individual">Individual</mat-option>
+              <mat-option value="Couple">Couple</mat-option>
+            </mat-select>
+            <mat-error *ngIf="typeSessionField?.invalid">{{typeSessionError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
             <mat-label>Cmp</mat-label>
             <input matInput placeholder="cmp" formControlName="cmp" >
             <mat-error *ngIf="cmpField?.invalid">{{cmpError}}</mat-error>
@@ -50,6 +72,25 @@
             <input matInput placeholder="password" formControlName="password" >
             <mat-error *ngIf="passwordField?.invalid">{{passwordError}}</mat-error>
           </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Specialization</mat-label>
+            <input matInput placeholder="specialization" formControlName="specialization" >
+            <mat-error *ngIf="specializationField?.invalid">{{specializationError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Formation</mat-label>
+            <input matInput placeholder="formation" formControlName="formation" >
+            <mat-error *ngIf="formationField?.invalid">{{formationError}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>About</mat-label>
+            <input matInput placeholder="about" formControlName="about" >
+            <mat-error *ngIf="aboutField?.invalid">{{aboutError}}</mat-error>
+          </mat-form-field>
+
           <div class="flex justify-center">
             <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Register</button>
           </div>

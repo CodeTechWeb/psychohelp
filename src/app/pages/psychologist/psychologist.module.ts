@@ -21,6 +21,8 @@ import { PatientsComponent } from "./patients/patients.component";
 import {MatTableModule} from "@angular/material/table";
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { ListPatientsComponent } from './list-patients/list-patients.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+
 
 @NgModule({
   declarations: [
@@ -33,23 +35,24 @@ import { ListPatientsComponent } from './list-patients/list-patients.component';
     AppointmentsComponent,
     ListPatientsComponent
   ],
-  imports: [
-    CommonModule,
-    MatGridListModule,
-    ComponentsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatIconModule,
-    LayoutModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule,
-    MatSelectModule,
-    MatTableModule,
+    imports: [
+        CommonModule,
+        MatGridListModule,
+        ComponentsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatIconModule,
+        LayoutModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule,
+        MatSelectModule,
+        MatTableModule,
+        MatDatepickerModule,
 
-  ]
+    ]
 })
 export class PsychologistModule { }

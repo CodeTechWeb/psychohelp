@@ -28,12 +28,34 @@ export class PublicationsService {
         catchError(this.handleError));
   }
 
-  addPublications(publication: Publication){
-    return this.http.post(this.apiURL, JSON.stringify(publication), this.httpOptions)
+  addPublications(psychologistId: string, publication: Publication){
+    return this.http.post(`${environment.apiUrl}/publications/publication/${psychologistId}`, JSON.stringify(publication), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       );
+  }
+
+  getPublicationsByPsychologistId(psychologistId: string): Observable<Publication>{
+    return this.http.get<Publication>(`${environment.apiUrl}/publications/psychologist/${psychologistId}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+  editPublication(publicationId: string, publication: Object): Observable<Publication>{
+    return this.http.put<Publication>(`${environment.apiUrl}/publications/${publicationId}`, publication, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+
+  }
+
+  deletePublication(publicationId: string): Observable<Publication>{
+    return this.http.delete<Publication>(`${environment.apiUrl}/publications/${publicationId}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
   }
 
   handleError(error: HttpErrorResponse) {
