@@ -34,6 +34,13 @@ export class PsychologistService {
       );
   }
 
+  update(id: any, psychologist: Object): Observable<any> {
+    return this.http.put<Psychologist>(`${environment.apiUrl}/psychologists/${id}`, psychologist, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
   login(email:string):Observable<any> {
     return this.http.get(`${environment.apiUrl}/psychologists?email=${email}`, this.httpOptions)
       .pipe(
@@ -50,4 +57,6 @@ export class PsychologistService {
     }
     return throwError('Something happened with request, please try again later')
   }
+
+
 }

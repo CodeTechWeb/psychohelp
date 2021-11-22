@@ -10,7 +10,7 @@ const index: Routes = [
   { path: 'room/:id', component: RoomComponent },
   ...patientRoutes,
   ...psychologistRoutes,
-  { path: 'psychologist/profile', component: PsychologistProfileComponent },
+  { path: 'psychologist/profile/:id', component: PsychologistProfileComponent },
   { path: 'profile', component: PatientProfileComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
