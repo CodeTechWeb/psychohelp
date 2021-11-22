@@ -42,7 +42,7 @@ export class PatientsService {
         catchError(this.handleError));
   }
 
-  getPatientById(patientId: string): Observable<Patients> {
+  getPatientById(patientId: number): Observable<Patients> {
     return this.http.get<Patients>(`${this.apiURL}/${patientId}`, this.httpOptions)
       .pipe(
         retry(2),

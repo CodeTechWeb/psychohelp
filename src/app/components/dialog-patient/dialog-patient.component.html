@@ -1,0 +1,13 @@
+<div *ngIf="receivedPsychologist">
+  <div class="grid">
+    <div class="parent">
+      <img mat-card-image class="child" [src]="receivedPsychologist.img" alt="">
+    </div>
+    <mat-card-title class="text-center">{{receivedPsychologist.name}}</mat-card-title>
+    <mat-card-subtitle class="text-center">{{receivedPsychologist.email}}</mat-card-subtitle>
+    <mat-card-actions style="text-align: end;">
+      <button mat-raised-button (click)="Join()">Join</button>
+      <button mat-raised-button (click)="closeDialog()">Close</button>
+    </mat-card-actions>
+  </div>
+</div>

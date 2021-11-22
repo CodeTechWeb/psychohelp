@@ -1,0 +1,15 @@
+<app-layout domain="psychologist">
+  <div style="width: 90%; height: 100%">
+    <mat-card class="mt-10 ml-8 mr-10">
+      <h2 class="ml-9 mb-5">Appointments</h2>
+      <div *ngFor="let appointment of appointments">
+        <div class="flex justify-center">
+          <mat-card class="mr-8 ml-8" style="background-color: #03A9F4;width: 80%">
+            <h3>{{appointment.scheduleDate}}</h3>
+          </mat-card>
+          <button mat-raised-button (click)="openDetails(appointment.id, appointment.patientId)">Details</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</app-layout>
