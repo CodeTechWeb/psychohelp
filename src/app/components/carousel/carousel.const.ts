@@ -1,4 +1,4 @@
-import {ICarouselItem} from "./Icarousel-item.metadata";
+import { ICarouselItem } from "./Icarousel-item.metadata";
 
 export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
   {

@@ -24,14 +24,12 @@ export class DialogComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   addPost(){
     // console.log(this.form);
     const publication: Publications ={
-      id: Date.now(),
+      id: this.form.value.id,
       title: this.form.value.title,
       description: this.form.value.description,
       tags: this.form.value.tags,
@@ -39,19 +37,12 @@ export class DialogComponent implements OnInit {
     }
 
     this._publicationsService.addPublications(publication)
-      .subscribe(rt => console.log(rt),
-                 er =>console.log(er),
-                 ()=>console.log('Terminado'),
-
-            );
-
-
+      .subscribe(
+        rt => console.log(rt),
+        er =>console.log(er),
+        ()=>console.log('Terminado'),
+      );
   }
-
-
-
-
-
 }
 
 

@@ -22,7 +22,7 @@ export class CarouselComponent implements OnInit {
 
   constructor() {
     this.finalHeight = this.isFullScreen ? '100vh' : `${this.height}px`;
-   }
+  }
 
   ngOnInit() {
     this.items.map( ( i, index) => {
@@ -59,7 +59,5 @@ export class CarouselComponent implements OnInit {
     }
     this.items.find(i => i.id === 0)!.marginLeft = finalPercentage;
     this.currentPosition = backPosition;
-
   }
-
 }

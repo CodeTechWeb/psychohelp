@@ -1,6 +1,10 @@
-<div class="fixed bottom-0 w-full bg-transparent flex justify-center items-center">
-  <div *ngFor="let option of options" class="mr-5">
-    <button mat-fab color="{{option.color.button}}" attr.aria-label="Example icon button with a {{option.label}} icon">
+<div class="fixed bottom-10 w-full bg-transparent flex justify-center items-center transform scale-75 lg:scale-100">
+  <div *ngFor="let option of options" class="m-1 " >
+    <button
+      mat-fab color="{{option.color.button}}"
+      attr.aria-label="Example icon button with a {{option.label}} icon"
+      (click)="option.action?.call()"
+    >
       <mat-icon color="{{option.color.icon}}">{{option.icon}}</mat-icon>
     </button>
   </div>

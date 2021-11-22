@@ -1,5 +1,9 @@
-import {PsychologistsComponent} from "../pages/patient/psychologists/psychologists.component";
+import { HomePsychologistComponent } from "../pages/psychologist/home/home-psychologist.component";
+import { RegisterComponent } from "../pages/psychologist/register/register.component";
+import { LoginComponent } from "../pages/psychologist/login/login.component";
 
 export default [
-  { path: 'psychologist/home', component: PsychologistsComponent },
+  { path: 'psychologist/home', component: HomePsychologistComponent },
+  { path: 'psychologist/register', component: RegisterComponent },
+  { path: 'psychologist/login', component: LoginComponent },
 ]

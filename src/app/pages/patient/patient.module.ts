@@ -16,9 +16,18 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {PatientProfileComponent} from "./profile/patient-profile.component";
+
 import {PatientDashboardComponent} from "./dashboard/patient-dashboard.component";
 
 
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatRadioModule} from "@angular/material/radio";
+import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "../../app-routing.module";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -29,6 +38,7 @@ import {PatientDashboardComponent} from "./dashboard/patient-dashboard.component
     HomePatientComponent,
     PatientDashboardComponent
   ],
+
   imports: [
     CommonModule,
     MatGridListModule,
@@ -41,7 +51,16 @@ import {PatientDashboardComponent} from "./dashboard/patient-dashboard.component
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FlexLayoutModule,
+    MatRadioModule,
+    FormsModule,
+    AppRoutingModule
   ]
+
 })
 export class PatientModule { }
