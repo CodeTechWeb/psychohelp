@@ -43,12 +43,12 @@ export class PsychologistsComponent implements OnInit{
 
   openPsychologistDialog(selectedPsychologist: any) {
     const dialogRef= this.dialog.open(PsychologistDialogComponent,{
-      width: '700px',
-      height: '700px',
+      width: '500px',
+      height: '500px',
       data:{
         name: selectedPsychologist.name,
         email: selectedPsychologist.email,
-        img: selectedPsychologist.img,
+        image: selectedPsychologist.image,
         about: selectedPsychologist.about,
         specialization: selectedPsychologist.specialization,
         formation: selectedPsychologist.formation,
