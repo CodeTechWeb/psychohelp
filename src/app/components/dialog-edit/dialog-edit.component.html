@@ -29,11 +29,11 @@
             <input matInput autocomplete="off" formControlName="tags">
           </mat-form-field>
         </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" rowspan="1">
+        </mat-grid-tile>
         <mat-grid-tile>
           <div class="text-inside-grid">
-            <button mat-dialog-close mat-raised-button style="margin-right: 20px" >Cancel</button>
-            <button mat-raised-button color="primary" style="margin-right: 20px">Save In Drafts</button>
-            <button type="submit" (click)="addPost()" mat-dialog-close mat-raised-button color="primary">Publish</button>
+            <button mat-dialog-close mat-raised-button style="margin-right: 20px" (click)="editPost()">Edit</button>
           </div>
         </mat-grid-tile>
       </mat-grid-list>

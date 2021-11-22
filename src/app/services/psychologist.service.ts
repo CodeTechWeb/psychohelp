@@ -47,7 +47,7 @@ export class PsychologistService {
   }
 
   login(email:string):Observable<any> {
-    return this.http.get(`${environment.apiUrl}/psychologists?email=${email}`, this.httpOptions)
+    return this.http.get(`${environment.apiUrl}/psychologists/email/${email}`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)

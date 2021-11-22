@@ -14,9 +14,8 @@ export class RegisterComponent implements OnInit {
   userId!: number;
   constructor(private fb: FormBuilder, private psychologistsSvc: PsychologistService, private route: Router) {
     this.form = this.fb.group({
-      id: 0,
       name: ['', Validators.required],
-      age: 0,
+      birthdayDate: [''],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.maxLength(9), Validators.minLength(9),
         Validators.pattern("^[0-9]*$")]],
@@ -24,8 +23,8 @@ export class RegisterComponent implements OnInit {
       formation: [''],
       about: [''],
       active: [''],
-      img: [''],
-      new: [''],
+      dni: ['', [Validators.required, Validators.maxLength(8)]],
+      image: [''],
       genre: ['', Validators.required],
       sessionType: [''],
       cmp: ['', [Validators.required,Validators.pattern("^[0-9]*$"),Validators.maxLength(10)]],
@@ -40,18 +39,18 @@ export class RegisterComponent implements OnInit {
   addPsychologist() {
     if(this.form.valid) {
       let psychologist: any = {
-        id: this.form.value.id,
         name: this.form.value.name,
-        age: this.form.value.age,
         email: this.form.value.email,
+        dni: this.form.value.dni,
         phone: parseInt(this.form.value.phone),
-        specialization: [''],
-        formation: [''],
+        specialization: this.form.value.specialization,
+        birthdayDate: this.form.value.birthdayDate,
+        formation: this.form.value.formation,
         about: this.form.value.about,
         active: true,
-        new: true,
+        fresh: true,
         genre: this.form.value.genre,
-        sessionType: '',
+        sessionType: this.form.value.sessionType,
         cmp: parseInt(this.form.value.cmp),
         password: this.form.value.password,
         image: "https://gentequebrilla.azurewebsites.net/wp-content/uploads/2019/04/12014-1024x604.jpg",
@@ -66,7 +65,7 @@ export class RegisterComponent implements OnInit {
               .subscribe(res =>{
                   alert("Succesfully Registered");
                   this.form.reset();
-                  this.route.navigate(['psychologistLogin']);
+                  this.route.navigate(['psychologist/login']);
                 },
                 err=>{
                   alert('Something is wrong');
@@ -94,6 +93,25 @@ export class RegisterComponent implements OnInit {
   get passwordField() {
     return this.form.get('password');
   }
+  get specializationField(){
+    return this.form.get('specialization');
+  }
+  get formationField(){
+    return this.form.get('formation');
+  }
+  get birthdayDateField(){
+    return this.form.get('birthdayDate');
+  }
+  get typeSessionField(){
+    return this.form.get('typeSession');
+  }
+  get aboutField(){
+    return this.form.get('about');
+  }
+  get dniField(){
+    return this.form.get('dni');
+  }
+
   get nameError() {
     if (this.nameField?.hasError('required')) {
       return 'This field is required ';
@@ -139,4 +157,45 @@ export class RegisterComponent implements OnInit {
     }
     return this.passwordField?.hasError('minlength') ? 'The password must contain at least 8 characters': '';
   }
+  get specializationError(){
+    if(this.specializationField?.hasError('required')){
+      return 'This field is required';
+    } return 'You must enter a value';
+  }
+
+  get formationError(){
+    if(this.formationField?.hasError('required')){
+      return 'This field is required';
+    } return 'You must enter a value';
+  }
+
+  get birthdayDateError(){
+    if(this.birthdayDateField?.hasError('required')){
+      return 'This field is required';
+    } return 'You must enter a value';
+  }
+
+  get typeSessionError() {
+    if (this.typeSessionField?.hasError('required')) {
+      return 'This field is required ';
+    }
+    return 'You must enter a value ';
+  }
+
+  get aboutError(){
+    if(this.aboutField?.hasError('required')){
+      return 'This field is required ';
+    }
+    return 'You must enter a value ';
+  }
+
+  get dniError(){
+    if(this.dniField?.hasError('required'))
+      if (this.dniField?.hasError('required')) {
+        return 'This field is required '
+      }
+    return this.dniField?.hasError('maxlength') ? 'The password must contain only 8 characters': '';
+  }
+
+
 }

@@ -3,7 +3,10 @@
     <mat-grid-list [hidden]="" cols="8" rowHeight="100px">
       <mat-grid-tile class="imgTile" [colspan]="1" [rowspan]="3">
         <div align="center">
-          <img class="imgPerf ml-4 mr-10" width="250" height="250" src="https://medii.care/wp-content/uploads/sites/41/2020/08/dra-lytza-alvarez-perfil-01.png" alt="psychologist">
+          <img class="imgPerf ml-4 mr-10 mt-8" width="250" height="250" [src]="psychologist.image" alt="psychologist">
+          <mat-card class="mx-auto ml-4 mt-5">
+            Welcome: {{psychologist.name}}
+          </mat-card>
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="5" [rowspan]="17" >
@@ -14,27 +17,47 @@
           <mat-card class="mb-4 ml-5 mr-5 m-5" *ngFor="let publication of publications" >
             <mat-card-title-group>
               <mat-card-title>{{publication.title}}</mat-card-title>
-              <mat-card-subtitle> {{ publication.tags }}, </mat-card-subtitle>
             </mat-card-title-group>
             <div class="flex items-stretch self-center grid justify-items-stretch">
               <mat-card-content>
                 {{publication.description}}
               </mat-card-content>
+              <mat-card-content>
+                {{publication.content}}
+              </mat-card-content>
               <div class="self-center justify-self-end"><img width="250" height="250" [src]="publication.photoUrl" alt="" ></div>
             </div>
+            <button mat-raised-button color="primary" (click)="openPublicationEditDialog(publication)">Edit</button>
+            <button mat-raised-button color="primary" (click)="deletePublication(publication)">Delete</button>
           </mat-card>
         </div>
       </mat-grid-tile>
 
-      <mat-grid-tile  [colspan]="2" [rowspan]="20" >
+      <mat-grid-tile  [colspan]="2" [rowspan]="22" >
         <div class="h-full w-full" >
-          <ng-container *ngFor="let psychologist of psychologist">
-
+          <h1 class="mt-8 text-center">OTHER PSYCHOLOGISTS</h1>
+          <ng-container *ngFor="let psychologist of psychologists">
+            <mat-card class="example-card mb-10 ml-10 mr-10 m-5 justify-item-center" *ngIf="psychologist">
+              <mat-card-header>
+                <mat-card-title> {{psychologist.name}} </mat-card-title>
+                <mat-card-subtitle>{{psychologist.email}}</mat-card-subtitle>
+              </mat-card-header>
+              <img height="150" max-width="80" [src]="psychologist.image" alt="">
+              <mat-card-content class="text-justify">
+                  {{ psychologist.about }}
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button (click)="openPsychologistDialog(psychologist)">Profile</button>
+              </mat-card-actions>
+            </mat-card>
           </ng-container>
         </div>
       </mat-grid-tile>
 
+
+
       <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-divider></mat-divider>
         <div class="btn1">
           <button color="primary" mat-raised-button (click)="openDialog()">New Post</button>
         </div>

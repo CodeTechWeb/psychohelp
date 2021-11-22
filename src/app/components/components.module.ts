@@ -20,6 +20,8 @@ import { PsychologistDialogComponent } from './psychologist-dialog/psychologist-
 import { AppointmentSelectedComponent } from './appointment-selected/appointment-selected.component';
 import { DetailsDialogComponent } from './details-dialog/details-dialog.component';
 import { DialogPatientComponent } from './dialog-patient/dialog-patient.component';
+import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { DialogPatientComponent } from './dialog-patient/dialog-patient.componen
     editLogbookComponent,
     AppointmentSelectedComponent,
     DetailsDialogComponent,
-    DialogPatientComponent
+    DialogPatientComponent,
+    DialogEditComponent
   ],
   exports: [
     VideoPlayerComponent,
