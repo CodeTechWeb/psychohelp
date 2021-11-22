@@ -11,13 +11,13 @@
           <tr>
             <mat-form-field class="w-1/2 " hintLabel="Max 30 characters" appearance="outline">
               <mat-label>Firstname</mat-label>
-              <input matInput #inputFirstname maxlength="30" placeholder="Ex. Admin" formControlName="firstname" required>
+              <input matInput #inputFirstname maxlength="30" placeholder="Ex. Admin" formControlName="firstName" required>
               <mat-hint align="end">{{inputFirstname.value?.length || 0}}/30</mat-hint>
             </mat-form-field>
 
             <mat-form-field class="w-1/2" hintLabel="Max 30 characters" appearance="outline">
               <mat-label>Lastname</mat-label>
-              <input matInput #inputLastname maxlength="30" placeholder="Ex. Admin" formControlName="lastname">
+              <input matInput #inputLastname maxlength="30" placeholder="Ex. Admin" formControlName="lastName">
               <mat-hint align="end">{{inputLastname.value?.length || 0}}/30</mat-hint>
             </mat-form-field>
           </tr>
@@ -41,17 +41,6 @@
           </button>
         </mat-form-field>
 
-        <mat-form-field class="w-3/5" appearance="outline">
-          <mat-label>Marital status</mat-label>
-          <mat-select formControlName="state" required>
-            <mat-option value="single">Single</mat-option>
-            <mat-option value="married">Married</mat-option>
-            <mat-option value="widower">Widower</mat-option>
-            <mat-option value="divorced">Divorced</mat-option>
-          </mat-select>
-          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-        </mat-form-field>
-
         <mat-form-field class="w-3/5" hintLabel="Max 9 digits" appearance="outline">
           <mat-label>Phone</mat-label>
           <input matInput #inputPhone maxlength="9" placeholder="Ex. 987654321" formControlName="phone" required>
@@ -60,7 +49,7 @@
 
         <mat-form-field class="w-3/5" appearance="outline">
           <mat-label>Birthday date</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="birthdayDate" required>
+          <input matInput [matDatepicker]="picker" formControlName="date" required>
           <mat-datepicker-toggle matSuffix [for]="picker">
             <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
           </mat-datepicker-toggle>
@@ -76,9 +65,16 @@
           </mat-select>
           <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
         </mat-form-field>
+
+        <mat-form-field class="w-1/2" hintLabel="Max 250 characters" appearance="outline">
+          <mat-label>Image</mat-label>
+          <input matInput #inputImage maxlength="250" placeholder="Ex. Admin" formControlName="img">
+          <mat-hint align="end">{{inputImage.value?.length || 0}}/250</mat-hint>
+        </mat-form-field>
+
       </form>
       <div  class=" flex justify-center items-center flex-col space-y-4">
-        <button class="w-1/2"  mat-raised-button color="primary" type="submit" (click)="register()" routerLink="sign-in" [disabled]="form.invalid">Register</button>
+        <button class="w-1/2"  mat-raised-button color="primary" type="submit" (click)="register()" routerLink="login" >Register</button>
       </div>
     </mat-card>
   </div>

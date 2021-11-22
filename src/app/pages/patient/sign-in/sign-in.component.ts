@@ -9,6 +9,8 @@ import {Router} from "@angular/router";
 })
 export class SignInComponent implements OnInit {
   form: FormGroup;
+  email: string = "";
+  password: string = "";
   ngOnInit(): void {
   }
 
@@ -20,20 +22,20 @@ export class SignInComponent implements OnInit {
     })
   }
 
-  validateSignIn() {
+  validateLogin() {
     const formValue = this.form.value;
     this._patientsService.getEmail(formValue.email)
-      .subscribe((res) =>{
+      .subscribe((res)=>{
         console.log(res)
         if(res.length==0)
         {
           alert('Email or password are wrong')
-        } else if(res.length==1) {
+        } else {
           console.log(res.password);
-          if (res[0].password===formValue.password) {
-            this.route.navigate(['/home-patient/', res[0].id])
+          if (res.password===formValue.password) {
+            this.route.navigate(['home-patient/', res.id])
           } else {
-            alert('Email or passwaord are wrong')
+            alert('Email or password are wrong')
           }
         }
       })
