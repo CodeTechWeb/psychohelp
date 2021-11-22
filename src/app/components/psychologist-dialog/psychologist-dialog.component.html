@@ -1,25 +1,20 @@
 <div *ngIf="receivedPsychologist">
-  <mat-card>
     <div class="parent">
-      <img mat-card-image class="child" [src]="receivedPsychologist.img" alt="">
+      <img mat-card-image class="child" [src]="receivedPsychologist.image" alt="">
     </div>
     <br>
     <mat-card-title class="text-center">{{receivedPsychologist.name}}</mat-card-title>
     <mat-card-subtitle class="text-center">{{receivedPsychologist.email}}</mat-card-subtitle>
     <mat-card-content class="text-justify">{{receivedPsychologist.about}}</mat-card-content>
-    <mat-card>
-      <mat-card-title class="text-blue-700 mat-body-2">Áreas de Atención</mat-card-title>
-      <mat-card-content *ngFor="let specialization of receivedPsychologist.specialization">{{specialization}}</mat-card-content>
-    </mat-card>
     <br>
-    <mat-card>
+      <mat-card-title class="text-blue-700 mat-body-2">Áreas de Atención</mat-card-title>
+      <mat-card-content class="text-justify">{{receivedPsychologist.specialization}}</mat-card-content>
+    <br>
       <mat-card-title class="text-blue-700 mat-body-2">Formación Académica</mat-card-title>
-      <mat-card-content *ngFor="let formation of receivedPsychologist.formation">{{formation}}</mat-card-content>
-    </mat-card>
-    <mat-card-actions style="text-align: end;">
+      <mat-card-content class="text-justify">{{receivedPsychologist.formation}}</mat-card-content>
+        <mat-card-actions style="text-align: end;">
       <button mat-raised-button (click)="closeDialog()">Salir</button>
     </mat-card-actions>
-  </mat-card>
 </div>
 
 <style>

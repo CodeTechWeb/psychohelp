@@ -1,7 +1,7 @@
 export interface Psychologist {
   about: string;
   active: boolean;
-  birthDate: string;
+  birthdayDate: string;
   cmp: number;
   dni: string;
   email: string;
