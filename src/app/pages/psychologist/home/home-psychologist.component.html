@@ -29,25 +29,7 @@
       <mat-grid-tile  [colspan]="2" [rowspan]="20" >
         <div class="h-full w-full" >
           <ng-container *ngFor="let psychologist of psychologist">
-            <mat-card class="example-card mb-10 ml-10 mr-10 m-10 justify-item-center" *ngIf="psychologist">
-              <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title> {{psychologist.name}} </mat-card-title>
-                <mat-card-subtitle>{{psychologist.email}}</mat-card-subtitle>
-              </mat-card-header>
-              <img height="150" max-width="100" [src]="psychologist.image" alt="">
-              <mat-card-content>
-                <p>
-                  {{ psychologist.about }}
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
-                  <mat-icon>favorite</mat-icon>
-                </button>
-                <button mat-button>Share</button>
-              </mat-card-actions>
-            </mat-card>
+
           </ng-container>
         </div>
       </mat-grid-tile>

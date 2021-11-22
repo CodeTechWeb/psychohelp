@@ -22,20 +22,26 @@ export class HomePatientComponent implements OnInit {
 
   constructor(
     private publicationsService: PublicationsService,
-    private psychologistsService: PsychologistService,
-  ) { }
+    private psychologistsService: PsychologistService) { }
 
   ngOnInit(): void {
-    this.publicationsService.getAllPublications()
-      .pipe(
-        tap( (response: Response<Publication[]>) => this.publications = response.content)
-      )
-      .subscribe();
+    this.getPublications();
+    this.getPsychologist();
+  }
 
+  getPsychologist(): void{
     this.psychologistsService.getAllPsychologists()
-      .pipe(
-        tap((response: Response<Psychologist[]>) => this.psychologists = response.content)
-      )
-      .subscribe();
+      .subscribe((data: any) => {
+        this.psychologists = data;
+      console.log(this.psychologists);
+    })
+  }
+  getPublications(): void{
+    this.publicationsService.getAllPublications()
+      .subscribe((data: any) => {
+        this.publications = data;
+        console.log(this.publications);
+      })
   }
 }
+
