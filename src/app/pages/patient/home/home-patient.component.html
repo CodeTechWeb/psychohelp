@@ -1,4 +1,4 @@
-<app-layout>
+<app-layout >
   <div class="flex w-full h-full">
     <div class="grid-rows-3 grid-cols-1">
       <img class="ml-4 mr-4 mt-4 mb-4 round" width="250" height="250"
@@ -25,31 +25,33 @@
       </div>
 
       <mat-card class="mx-4 my-4" *ngFor="let publication of publications">
-        <div>
-          <img mat-card-image
-               style="max-width: 400px"
-               class="px-7 py-7"
-               [src]="publication.photoUrl">
-        </div>
-        <div style="">
-          <mat-card-title>
-            {{ publication.title }}
-          </mat-card-title>
-          <mat-card-subtitle>
-            <mat-icon aria-hidden="false">edit</mat-icon>
-            <mat-card-content class="text-h6 font-weight-regular pt-3 text--secondary">
-              {{publication.description }}
-            </mat-card-content>
-          </mat-card-subtitle>
-          <mat-card-actions align="end">
-            <button mat-raised-button color="primary">Read Full Note</button>
-            <button mat-stroked-button color="accent">Share</button>
-          </mat-card-actions>
+        <div class="flex flex-column md:flex-row justify-around">
+          <div>
+            <img mat-card-image
+                 style="max-width: 400px"
+                 class="px-7 py-7"
+                 [src]="publication.photoUrl"
+                 alt=""
+            >
+          </div>
+          <div style="">
+            <mat-card-title>
+              {{ publication.title }}  <mat-icon aria-hidden="false">edit</mat-icon>
+            </mat-card-title>
+            <mat-card-subtitle>
+              <mat-card-content class="text-h6 font-weight-regular pt-3 text--secondary">
+                {{ publication.description }}
+              </mat-card-content>
+            </mat-card-subtitle>
+            <mat-card-actions align="end">
+              <a mat-raised-button color="primary" href="/publications/{{publication.id}}">
+                Read Full Note
+              </a>
+            </mat-card-actions>
+          </div>
         </div>
       </mat-card>
-
     </div>
-
 
     <div class="hidden xl:flex flex-col justify-start lg:w-1/5 h-full p-4 pr-5">
       <mat-card>

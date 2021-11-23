@@ -1,0 +1,14 @@
+<app-layout>
+  <div class="w-full h-full flex justify-center items-center">
+    <mat-card>
+      <mat-card-title>{{publication?.title}}</mat-card-title>
+      <mat-card-subtitle>{{publication?.tags}}</mat-card-subtitle>
+      <img mat-card-image class="max-w-none" src="{{publication?.photoUrl}}" alt="{{publication?.title}}">
+      <mat-card-content>
+        <p>
+          {{publication?.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</app-layout>

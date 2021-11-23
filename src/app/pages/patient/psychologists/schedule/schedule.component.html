@@ -3,21 +3,25 @@
     <div class="w-full md:w-1/3 md:mr-10">
       <mat-card>
         <mat-card-header>
-          <mat-card-title>{{psychologist.name}}</mat-card-title>
-          <mat-card-subtitle>{{psychologist.email}}</mat-card-subtitle>
-          <mat-card-subtitle>{{psychologist.phone}}</mat-card-subtitle>
+          <mat-card-title>Reserva con {{psychologist?.name}}</mat-card-title>
+          <mat-card-subtitle>{{psychologist?.email}}</mat-card-subtitle>
+          <mat-card-subtitle>{{psychologist?.phone}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="psychologist.image" alt="{{psychologist.name}}" class="max-w-none">
-        <mat-card-content>
-          <p>{{psychologist.about}}</p>
-        </mat-card-content>
+        <img mat-card-image [src]="psychologist?.image" alt="{{psychologist?.name}}" class="max-w-none">
       </mat-card>
     </div>
-    <div class="w-full md:w-1/3">
-      Schedule:
+    <div class="w-full md:w-1/3 md:mr-10">
       <mat-card>
-        <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+        <mat-card-header>
+          <mat-card-title>{{patient?.firstName}} {{patient?.lastName}}</mat-card-title>
+          <mat-card-subtitle>{{patient?.email}}</mat-card-subtitle>
+          <mat-card-subtitle>{{patient?.phone}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="patient?.img" alt="{{patient?.firstName}}" class="max-w-none">
       </mat-card>
+    </div>
+    <div>
+      <button mat-raised-button (click)="openDialog()">Pagar</button>
     </div>
   </div>
 </app-layout>

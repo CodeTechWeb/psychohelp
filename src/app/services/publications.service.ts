@@ -28,6 +28,11 @@ export class PublicationsService {
         catchError(this.handleError));
   }
 
+  getById(id: string): Observable<Publication> {
+    return this.http.get<Publication>(`${this.apiURL}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError))
+  }
+
   addPublications(psychologistId: string, publication: Publication){
     return this.http.post(`${environment.apiUrl}/publications/publication/${psychologistId}`, JSON.stringify(publication), this.httpOptions)
       .pipe(

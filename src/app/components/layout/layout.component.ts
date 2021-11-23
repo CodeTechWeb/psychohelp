@@ -10,7 +10,15 @@ export class LayoutComponent implements OnInit {
   @Input() domain!: string | null;
 
   patient_id: number = 0;
-  userType: string = "psychologist"
+
+  patientOptions = [
+    { name: "Home", route: "home-patient/1", icon: "home" },
+    { name: "Psychologists", route: 'psychologists/list/1', icon: 'psychology' },
+    { name: "Profile", route: 'profile/1', icon: 'person' },
+  ]
+  psychologistOptions = [
+    { name: "Home", route: "psychologist/1", icon: 'home' }
+  ]
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -20,6 +28,13 @@ export class LayoutComponent implements OnInit {
 
   profile() {
     this.router.navigate(['profile', this.patient_id])
+  }
+
+  options() {
+    if (this.domain == 'psychologist')
+      return this.psychologistOptions;
+    else
+      return this.patientOptions;
   }
 
   psychoList() {

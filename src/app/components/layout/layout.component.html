@@ -1,32 +1,21 @@
 <mat-drawer-container class="example-container w-full h-full">
-  <mat-toolbar style="background-color: #03A9F4" class="w-screen">
-    <button type="button" (click)="drawer.toggle()"
-            mat-icon-button aria-label="icon button with menu icon">
+  <mat-toolbar style="background-color: #03A9F4; color: white" class="w-screen">
+    <button type="button" (click)="drawer.toggle()" mat-icon-button aria-label="icon button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span>PsychoHelp</span>
   </mat-toolbar>
-  <mat-drawer #drawer class="example-sidenav w-60" mode="over">
+  <mat-drawer #drawer class="w-60" mode="over">
     <div class="w-full flex justify-start">
       <mat-list>
-        <mat-list-item>
-          <button type="submit" class="btn btn-success" (click)="profile()">
-            <mat-icon>person</mat-icon>
-            Profile
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button type="submit" class="btn btn-success" (click)="psychoList()">
-            <mat-icon>event</mat-icon>
-            Psychologists
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button type="submit" class="btn btn-success" (click)="appointment()">
-            <mat-icon>event</mat-icon>
-            Appointments
-          </button>
-        </mat-list-item>
+        <div *ngFor="let option of options()">
+          <mat-list-item>
+            <a href="{{option.route}}">
+              <mat-icon>{{option.icon}}</mat-icon>
+              {{option.name}}
+            </a>
+          </mat-list-item>
+        </div>
       </mat-list>
     </div>
   </mat-drawer>
