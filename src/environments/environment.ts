@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   socketUrl: 'https://psychohelp.herokuapp.com',
-  apiUrl: 'http://localhost:8080/api/v1',
+  apiUrl: 'https://psychohelp-open.mybluemix.net/api/v1',
   peer: { host: 'localhost', port: 3001 },
-  stripeKey: ''
+  stripeKey: 'pk_test_51JfUU7KDg13I2yDrmdZQHAA0IxPNCrHnIMVkouUzcRCcDFuyrYZHCu2eGHEQPamcbaMLzetnG7f8NJGQnV3QM22t00MRo3jndz'
 };
 
 /*

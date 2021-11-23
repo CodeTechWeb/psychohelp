@@ -2,7 +2,6 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {PsychologistsComponent} from "../../pages/patient/psychologists/psychologists.component";
 import {PsychologistService} from "../../services/psychologist.service";
-import psychologist from "../../routes/psychologist";
 
 @Component({
   selector: 'app-schedule-dialog',

@@ -13,11 +13,11 @@ export class LayoutComponent implements OnInit {
 
   patientOptions = [
     { name: "Home", route: "home-patient/1", icon: "home" },
-    { name: "Psychologists", route: 'psychologists', icon: 'psychology' },
+    { name: "Psychologists", route: 'psychologists/list/1', icon: 'psychology' },
     { name: "Profile", route: 'profile/1', icon: 'person' },
   ]
   psychologistOptions = [
-    { name: "Home", route: "psychologist/1", icon: 'home'}
+    { name: "Home", route: "psychologist/1", icon: 'home' }
   ]
 
   constructor(private route: ActivatedRoute, private router: Router) { }

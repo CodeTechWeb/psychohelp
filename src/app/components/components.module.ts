@@ -26,6 +26,9 @@ import {MatListModule} from "@angular/material/list";
 import { ScheduleDialogComponent } from './schedule-dialog/schedule-dialog.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
+import { PaymentsComponent } from './payments/payments.component';
+import {NgxStripeModule} from "ngx-stripe";
+import {environment} from "../../environments/environment";
 
 
 
@@ -42,29 +45,31 @@ import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
     DialogPatientComponent,
     LayoutPatientComponent,
     ScheduleDialogComponent,
-    DialogEditComponent
+    DialogEditComponent,
+    PaymentsComponent
   ],
   exports: [
     VideoPlayerComponent,
     CarouselComponent,
     BottomMenuComponent
   ],
-    imports: [
-        MatButtonModule,
-        MatIconModule,
-        LayoutModule,
-        CommonModule,
-        MatDialogModule,
-        MatToolbarModule,
-        MatCardModule,
-        MatGridListModule,
-        MatFormFieldModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        RouterModule,
-        MatSidenavModule,
-        MatListModule,
-        MatButtonToggleModule
-    ]
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    LayoutModule,
+    CommonModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonToggleModule,
+    NgxStripeModule.forRoot(environment.stripeKey)
+  ]
 })
 export class ComponentsModule { }

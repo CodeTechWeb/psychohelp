@@ -7,14 +7,17 @@
     <mat-card-title class="text-center">{{receivedPsychologist.name}}</mat-card-title>
     <br>
     <mat-card>
-      <mat-card-title class="text-blue-700 mat-body-2">Schedules</mat-card-title>
+      <mat-card-title class="text-blue-700 mat-body-2">Horarios</mat-card-title>
       <mat-button-toggle-group *ngFor="let schedule of schedules" class="mr-3">
-        <mat-button-toggle >
+        <mat-button-toggle>
           {{schedule.time}}
         </mat-button-toggle>
       </mat-button-toggle-group>
     </mat-card>
     <mat-card-actions style="text-align: end;">
+      <a href="psychologists/{{receivedPsychologist.id}}/schedule/{{receivedPatient.id}}" mat-raised-button color="primary">
+        Agendar
+      </a>
       <button mat-raised-button (click)="closeDialog()">Salir</button>
     </mat-card-actions>
   </mat-card>
